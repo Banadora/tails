@@ -13,11 +13,20 @@ xGame::xGame(int viewWidth, int viewHeight) {
 
     //paint map
     mapLayout = new xMapLayout;
-    for (int i = 0; i < 12; i++) {
+    mapLayout->setLayout(1);
+    for (int x = 0; x < 12; x++) {
         for (int y = 0; y < 12; y++) {
-            bloc = new xBloc("grass0");
-            bloc->setPos(i*32,y*32);
+            bloc = new xBloc(mapLayout->getBlocName(x,y));
+            bloc->setPos(x*32,y*32);
             scene->addItem(bloc);
         }
     }
+    heroBloc = new xBloc("hero");
+    heroBloc->setPos(4*32,10*32); //hero start in x=4,y=10
+    scene->addItem(heroBloc);
+
+}
+
+void xGame::paintMap(int nLvl) {
+
 }

@@ -13,9 +13,11 @@ class xGame : public QGraphicsView {
 
 public:
     xGame(int viewWidth, int viewHeight);
+    void paintMap(int nLvl);
 
     QGraphicsScene *scene;
     xMapLayout *mapLayout;
+    xBloc *heroBloc;
     xBloc *bloc;
 };
 
