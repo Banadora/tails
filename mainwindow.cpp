@@ -9,7 +9,7 @@ xMainWindow::xMainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    xGame game;
+    xGame game(ui->view->width()-2, ui->view->height()-2);
     ui->view->setScene(game.scene);
 }
 

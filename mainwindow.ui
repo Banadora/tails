@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>520</width>
-    <height>335</height>
+    <width>603</width>
+    <height>531</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,28 +15,19 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QGraphicsView" name="view">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>70</y>
-      <width>200</width>
-      <height>101</height>
+      <x>0</x>
+      <y>0</y>
+      <width>384</width>
+      <height>384</height>
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
+     <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+      <horstretch>100</horstretch>
+      <verstretch>100</verstretch>
      </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>200</width>
-      <height>0</height>
-     </size>
     </property>
    </widget>
   </widget>
@@ -45,7 +36,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>520</width>
+     <width>603</width>
      <height>21</height>
     </rect>
    </property>

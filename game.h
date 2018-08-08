@@ -11,7 +11,7 @@
 class xGame : public QGraphicsView {
 
 public:
-    xGame();
+    xGame(int viewWidth, int viewHeight);
 
     QGraphicsScene *scene;
     xBloc *bloc;

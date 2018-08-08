@@ -2,6 +2,6 @@
 #include "bloc.h"
 
 
-xBloc::xBloc(QGraphicsItem *parent) {
+xBloc::xBloc() {
     setPixmap(QPixmap(":/img/grass0.png"));
 }

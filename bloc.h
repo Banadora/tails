@@ -16,7 +16,7 @@ class xBloc : public QObject, public QGraphicsPixmapItem {
     int y;
 
 public:
-    xBloc(QGraphicsItem * parent=0);
+    xBloc();
 
     void setX (int nX);
     void setY (int nY);
