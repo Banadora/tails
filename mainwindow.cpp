@@ -17,6 +17,4 @@ xMainWindow::~xMainWindow() {
     delete ui;
 }
 
-void xMainWindow::on_movetest_clicked() {
-    game->moveHero(4,9);
-}
+

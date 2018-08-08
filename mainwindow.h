@@ -5,6 +5,7 @@
 
 #include <QMainWindow>
 
+
 namespace Ui {
 class xMainWindow;
 }
@@ -17,8 +18,9 @@ public:
     explicit xMainWindow(QWidget *parent = nullptr);
     ~xMainWindow();
 
+
 private slots:
-    void on_movetest_clicked();
+
 
 private:
     Ui::xMainWindow *ui;

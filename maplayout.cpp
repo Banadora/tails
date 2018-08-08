@@ -9,9 +9,9 @@ void xMapLayout::setLayout(int layoutNumber) {
             //          x= 0  1  2  3  4  5  6  7  8  9  10 11
             layout[0] =   "g1 g1 g1 g1 g1 g1 g1 m0 g1 g1 g1 g1"  ; //y = 0
             layout[1] =   "g1 g0 g0 g0 g1 g0 g0 m0 g1 g0 g0 g1"  ; //y = 1
-            layout[2] =   "g1 g0 g0 g0 g1 m2 m1 m4 g1 g0 g0 g1"  ; //y = 2
-            layout[3] =   "g1 g0 g1 g0 g0 m0 g1 g1 g0 g0 g0 g1"  ; //y = 3
-            layout[4] =   "g1 g0 g0 g0 g0 m0 g0 g1 g1 g0 g0 g1"  ; //y = 4
+            layout[2] =   "g1 g0 g1 g0 g1 m2 m1 m4 g1 g0 g0 g1"  ; //y = 2
+            layout[3] =   "g1 g0 g0 g0 g0 m0 g1 g1 g0 g0 g0 g1"  ; //y = 3
+            layout[4] =   "g1 g0 g1 g0 g0 m0 g0 g1 g1 g0 g0 g1"  ; //y = 4
             layout[5] =   "g1 g0 g0 g0 g1 m5 m1 m3 g0 g1 g0 g1"  ; //y = 5
             layout[6] =   "g1 g0 g0 g1 g1 g1 g0 m0 g0 g0 g0 g1"  ; //y = 6
             layout[7] =   "g1 g0 g1 g0 g0 g0 m2 m4 g0 g1 g0 g1"  ; //y = 7

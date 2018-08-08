@@ -9,12 +9,13 @@
 #include <QGraphicsScene>
 
 
-class xGame : public QGraphicsView {
 
+class xGame : public QGraphicsView {
+    Q_OBJECT
 public:
     xGame(int viewWidth, int viewHeight);
+
     void paintMap(int nLvl);
-    void moveHero(int nX, int nY);
 
     QGraphicsScene *scene;
     xMapLayout *mapLayout;

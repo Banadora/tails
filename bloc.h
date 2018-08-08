@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QGraphicsItem>
 #include <QGraphicsPixmapItem>
+#include <QKeyEvent>
+
 
 class xBloc : public QObject, public QGraphicsPixmapItem {
 
@@ -17,12 +19,12 @@ class xBloc : public QObject, public QGraphicsPixmapItem {
 
 public:
     xBloc(QString blocName);
+    void keyPressEvent(QKeyEvent *event);
 
-    /*void setX (int nX);
+    void setX (int nX);
     void setY (int nY);
-
     int getX();
-    int getY();*/
+    int getY();
 };
 
 #endif // BLOC_H

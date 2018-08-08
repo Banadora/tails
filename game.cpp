@@ -1,15 +1,21 @@
-
 #include "game.h"
+
+#include <QDebug>
 
 /*QWidget *parent*/
 xGame::xGame(int viewWidth, int viewHeight) {
 
-    // create the scene
+    //create the scene
     scene = new QGraphicsScene();
     scene->setSceneRect(0, 0, viewWidth, viewHeight);
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    //create hero
+    heroBloc = new xBloc("hero");
+    heroBloc->setFlag(QGraphicsItem::ItemIsFocusable);
+    heroBloc->setFocus();
 
     //create map
     mapLayout = new xMapLayout;
@@ -25,16 +31,10 @@ void xGame::paintMap(int nLvl) {
             scene->addItem(bloc);
         }
     }
-    heroBloc = new xBloc("hero");
-    heroBloc->setPos(mapLayout->getStartX()*32, mapLayout->getStartY()*32); //hero start in x=4,y=10
+
+    heroBloc->setPos(mapLayout->getStartX()*32, mapLayout->getStartY()*32);
+    heroBloc->setX(mapLayout->getStartX());
+    heroBloc->setY(mapLayout->getStartY());
     scene->addItem(heroBloc);
 }
 
-void xGame::moveHero(int nX, int nY) {
-    scene->removeItem(heroBloc);
-    delete heroBloc;
-
-    heroBloc = new xBloc("hero");
-    heroBloc->setPos(nX*32, nY*32); //hero start in x=4,y=10
-    scene->addItem(heroBloc);
-}
