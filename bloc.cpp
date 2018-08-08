@@ -8,20 +8,28 @@ xBloc::xBloc(QString blocName) {
 
 void xBloc::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Up) {
+        if (y > 0) {
             setPos(x*32, (y-1)*32);
             setY(y-1);
+        }
     }
     else if (event->key() == Qt::Key_Down) {
+        if (y+1 < 12) {
             setPos(x*32, (y+1)*32);
             setY(y+1);
+        }
     }
     else if (event->key() == Qt::Key_Left) {
+        if (x > 0) {
             setPos((x-1)*32, y*32);
             setX(x-1);
+        }
     }
     else if (event->key() == Qt::Key_Right) {
+        if (x+1 < 12) {
             setPos((x+1)*32, y*32);
             setX(x+1);
+        }
     }
     else if (event->key() == Qt::Key_Space) {  }
 }
