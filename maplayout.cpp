@@ -12,20 +12,23 @@ void xMapLayout::setLayout(int layoutNumber) {
             layout[2] =   "g1 g0 g0 g0 g1 m2 m1 m4 g1 g0 g0 g1"  ; //y = 2
             layout[3] =   "g1 g0 g1 g0 g0 m0 g1 g1 g0 g0 g0 g1"  ; //y = 3
             layout[4] =   "g1 g0 g0 g0 g0 m0 g0 g1 g1 g0 g0 g1"  ; //y = 4
-            layout[5] =   "g1 g0 g0 g0 g0 m5 m1 m3 g0 g1 g0 g1"  ; //y = 5
-            layout[6] =   "g1 g0 g1 g0 g0 g0 g0 m0 g0 g0 g0 g1"  ; //y = 6
+            layout[5] =   "g1 g0 g0 g0 g1 m5 m1 m3 g0 g1 g0 g1"  ; //y = 5
+            layout[6] =   "g1 g0 g0 g1 g1 g1 g0 m0 g0 g0 g0 g1"  ; //y = 6
             layout[7] =   "g1 g0 g1 g0 g0 g0 m2 m4 g0 g1 g0 g1"  ; //y = 7
-            layout[8] =   "g1 g1 g0 g0 g0 g0 m0 g0 g1 g1 g0 g1"  ; //y = 8
-            layout[9] =   "g1 g0 g0 g0 m2 m1 m4 g0 g1 g1 g0 g1"  ; //y = 9
-            layout[10] =  "g1 g0 g0 g0 g0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 10
+            layout[8] =   "g1 g1 g0 g0 g1 g0 m0 g0 g1 g1 g0 g1"  ; //y = 8
+            layout[9] =   "g1 g0 g0 g1 m2 m1 m4 g0 g1 g1 g0 g1"  ; //y = 9
+            layout[10] =  "g1 g0 g0 g0 m0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 10
             layout[11] =  "g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1"  ; //y = 11
+            startX = 4; startY = 10;
             break;
 
         case 2:
             break;
     }
-
 }
+
+int xMapLayout::getStartX() { return startX; }
+int xMapLayout::getStartY() { return startY; }
 
 QString xMapLayout::getBlocName(int x, int y) {
 

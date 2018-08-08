@@ -9,10 +9,14 @@ xMainWindow::xMainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    xGame game(ui->view->width()-2, ui->view->height()-2);
-    ui->view->setScene(game.scene);
+    game = new xGame(ui->view->width()-2, ui->view->height()-2);
+    ui->view->setScene(game->scene);
 }
 
 xMainWindow::~xMainWindow() {
     delete ui;
+}
+
+void xMainWindow::on_movetest_clicked() {
+    game->moveHero(4,9);
 }

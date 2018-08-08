@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "game.h"
+
 #include <QMainWindow>
 
 namespace Ui {
@@ -15,8 +17,12 @@ public:
     explicit xMainWindow(QWidget *parent = nullptr);
     ~xMainWindow();
 
+private slots:
+    void on_movetest_clicked();
+
 private:
     Ui::xMainWindow *ui;
+    xGame *game;
 };
 
 #endif // MAINWINDOW_H

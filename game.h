@@ -14,6 +14,7 @@ class xGame : public QGraphicsView {
 public:
     xGame(int viewWidth, int viewHeight);
     void paintMap(int nLvl);
+    void moveHero(int nX, int nY);
 
     QGraphicsScene *scene;
     xMapLayout *mapLayout;

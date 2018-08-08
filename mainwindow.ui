@@ -43,6 +43,19 @@
      <string>My debugz</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="movetest">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>360</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>movetest</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
