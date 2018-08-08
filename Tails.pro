@@ -26,12 +26,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     bloc.cpp \
-    game.cpp
+    game.cpp \
+    maplayout.cpp
 
 HEADERS += \
         mainwindow.h \
     bloc.h \
-    game.h
+    game.h \
+    maplayout.h
 
 FORMS += \
         mainwindow.ui

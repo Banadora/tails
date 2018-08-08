@@ -2,6 +2,6 @@
 #include "bloc.h"
 
 
-xBloc::xBloc() {
-    setPixmap(QPixmap(":/img/grass0.png"));
+xBloc::xBloc(QString blocName) {
+    setPixmap(QPixmap(":/img/" + blocName + ".png"));
 }

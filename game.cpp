@@ -3,23 +3,21 @@
 
 /*QWidget *parent*/
 xGame::xGame(int viewWidth, int viewHeight) {
+
     // create the scene
     scene = new QGraphicsScene();
-    scene->setSceneRect(0,0,viewWidth,viewHeight); // make the scene 800x600 instead of infinity by infinity (default)
+    scene->setSceneRect(0,0,viewWidth,viewHeight);
 
-    // make the newly created scene the scene to visualize (since Game is a QGraphicsView Widget,
-    // it can be used to visualize scenes)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    //setFixedSize(157,157);
-    //setScene(scene);
 
-    bloc = new xBloc();
-    bloc->setPos(0,0); // TODO generalize to always be in the middle bottom of screen
-
-    bloc->setFlag(QGraphicsItem::ItemIsFocusable);
-    bloc->setFocus();
-
-    scene->addItem(bloc);
-
+    //paint map
+    mapLayout = new xMapLayout;
+    for (int i = 0; i < 12; i++) {
+        for (int y = 0; y < 12; y++) {
+            bloc = new xBloc("grass0");
+            bloc->setPos(i*32,y*32);
+            scene->addItem(bloc);
+        }
+    }
 }
