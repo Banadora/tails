@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "game.h"
 
+xGame *game;
 
 xMainWindow::xMainWindow(QWidget *parent) :
     QMainWindow(parent),

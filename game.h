@@ -11,7 +11,9 @@
 
 
 class xGame : public QGraphicsView {
+
     Q_OBJECT
+
 public:
     xGame(int viewWidth, int viewHeight);
 
@@ -21,6 +23,7 @@ public:
     xMapLayout *mapLayout;
     xBloc *heroBloc;
     xBloc *bloc;
+    xBloc *activeBlocs[12][12];
 };
 
 #endif // GAME_H

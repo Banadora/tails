@@ -27,8 +27,10 @@ void xGame::paintMap(int nLvl) {
     for (int x = 0; x < 12; x++) {
         for (int y = 0; y < 12; y++) {
             bloc = new xBloc(mapLayout->getBlocName(x,y));
+            bloc->setName(mapLayout->getBlocName(x,y));
             bloc->setPos(x*32, y*32);
             scene->addItem(bloc);
+            activeBlocs[x][y] = bloc;
         }
     }
 

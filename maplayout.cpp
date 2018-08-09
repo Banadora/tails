@@ -47,3 +47,4 @@ QString xMapLayout::getBlocName(int x, int y) {
     else if (bloc == "m6") { return "mud6"; }
     else { return "blank"; }
 }
+
