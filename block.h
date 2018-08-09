@@ -1,5 +1,5 @@
-#ifndef BLOC_H
-#define BLOC_H
+#ifndef BLOCK_H
+#define BLOCK_H
 
 #include <QObject>
 #include <QGraphicsItem>
@@ -7,7 +7,7 @@
 #include <QKeyEvent>
 
 
-class xBloc : public QObject, public QGraphicsPixmapItem {
+class xBlock : public QObject, public QGraphicsPixmapItem {
 
     Q_OBJECT
 
@@ -19,7 +19,7 @@ class xBloc : public QObject, public QGraphicsPixmapItem {
     bool obstacle;
 
 public:
-    xBloc(QString blocName);
+    xBlock(QString blockName);
     void keyPressEvent(QKeyEvent *event);
 
     void setName (QString nName);
@@ -30,8 +30,8 @@ public:
     int getX();
     int getY();
 
-    void defineIfObstacle(QString blocName);
+    void defineIfObstacle(QString blockName);
     bool isObstacle();
 };
 
-#endif // BLOC_H
+#endif // BLOCK_H

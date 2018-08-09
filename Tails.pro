@@ -25,15 +25,15 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    bloc.cpp \
     game.cpp \
-    maplayout.cpp
+    maplayout.cpp \
+    block.cpp
 
 HEADERS += \
         mainwindow.h \
-    bloc.h \
     game.h \
-    maplayout.h
+    maplayout.h \
+    block.h
 
 FORMS += \
         mainwindow.ui

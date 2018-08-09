@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "game.h"
 
-xGame *game;
+xGame *game; //game can be called as extern in objects created in game itself
 
 xMainWindow::xMainWindow(QWidget *parent) :
     QMainWindow(parent),

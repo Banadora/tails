@@ -1,7 +1,7 @@
 
 #include "maplayout.h"
 
-
+////////// visually define layout of blocks and hero start position
 void xMapLayout::setLayout(int layoutNumber) {
 
     switch (layoutNumber) {
@@ -30,21 +30,22 @@ void xMapLayout::setLayout(int layoutNumber) {
 int xMapLayout::getStartX() { return startX; }
 int xMapLayout::getStartY() { return startY; }
 
-QString xMapLayout::getBlocName(int x, int y) {
+////////// get the real name of block from layout identifier
+QString xMapLayout::getBlockName(int x, int y) {
 
-    QString bloc;
+    QString block;
 
-    bloc = layout[y].mid(x*3,2);
+    block = layout[y].mid(x*3, 2);
 
-    if (bloc == "g0") { return "grass0"; }
-    else if (bloc == "g1") { return "grass1"; }
-    else if (bloc == "m0") { return "mud0"; }
-    else if (bloc == "m1") { return "mud1"; }
-    else if (bloc == "m2") { return "mud2"; }
-    else if (bloc == "m3") { return "mud3"; }
-    else if (bloc == "m4") { return "mud4"; }
-    else if (bloc == "m5") { return "mud5"; }
-    else if (bloc == "m6") { return "mud6"; }
+    if (block == "g0") { return "grass0"; }
+    else if (block == "g1") { return "grass1"; }
+    else if (block == "m0") { return "mud0"; }
+    else if (block == "m1") { return "mud1"; }
+    else if (block == "m2") { return "mud2"; }
+    else if (block == "m3") { return "mud3"; }
+    else if (block == "m4") { return "mud4"; }
+    else if (block == "m5") { return "mud5"; }
+    else if (block == "m6") { return "mud6"; }
     else { return "blank"; }
 }
 

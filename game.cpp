@@ -2,6 +2,7 @@
 
 #include <QDebug>
 
+////////// init
 /*QWidget *parent*/
 xGame::xGame(int viewWidth, int viewHeight) {
 
@@ -13,30 +14,31 @@ xGame::xGame(int viewWidth, int viewHeight) {
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     //create hero
-    heroBloc = new xBloc("hero");
-    heroBloc->setFlag(QGraphicsItem::ItemIsFocusable);
-    heroBloc->setFocus();
+    heroBlock = new xBlock("hero");
+    heroBlock->setFlag(QGraphicsItem::ItemIsFocusable);
+    heroBlock->setFocus();
 
     //create map
     mapLayout = new xMapLayout;
     paintMap(1);
 }
 
+////////// place blocks on scene based on which mapLayout is called
 void xGame::paintMap(int nLvl) {
-    mapLayout->setLayout(nLvl);
+    mapLayout->setLayout(nLvl); //get layout
     for (int x = 0; x < 12; x++) {
         for (int y = 0; y < 12; y++) {
-            bloc = new xBloc(mapLayout->getBlocName(x,y));
-            bloc->setName(mapLayout->getBlocName(x,y));
-            bloc->setPos(x*32, y*32);
-            scene->addItem(bloc);
-            activeBlocs[x][y] = bloc;
+            block = new xBlock(mapLayout->getBlockName(x,y));
+            block->setName(mapLayout->getBlockName(x,y));
+            block->setPos(x*32, y*32);
+            scene->addItem(block);
+            activeBlocks[x][y] = block; //place block in array to access it later
         }
     }
 
-    heroBloc->setPos(mapLayout->getStartX()*32, mapLayout->getStartY()*32);
-    heroBloc->setX(mapLayout->getStartX());
-    heroBloc->setY(mapLayout->getStartY());
-    scene->addItem(heroBloc);
+    heroBlock->setPos(mapLayout->getStartX()*32, mapLayout->getStartY()*32); //place heroBlock on scene
+    heroBlock->setX(mapLayout->getStartX());
+    heroBlock->setY(mapLayout->getStartY());
+    scene->addItem(heroBlock);
 }
 

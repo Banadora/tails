@@ -2,7 +2,7 @@
 #define GAME_H
 
 #include "maplayout.h"
-#include "bloc.h"
+#include "block.h"
 
 #include <QWidget>
 #include <QGraphicsView>
@@ -21,9 +21,9 @@ public:
 
     QGraphicsScene *scene;
     xMapLayout *mapLayout;
-    xBloc *heroBloc;
-    xBloc *bloc;
-    xBloc *activeBlocs[12][12];
+    xBlock *heroBlock;
+    xBlock *block;
+    xBlock *activeBlocks[12][12];
 };
 
 #endif // GAME_H
