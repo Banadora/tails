@@ -22,16 +22,15 @@ int xBlockExit::getDestinationY() const
 ///////////////////////////////////////////////Constructors
 ///
 
-xBlockExit::xBlockExit(QString blocName)
-{
+xBlockExit::xBlockExit(QString blocName) :
     xBlock(blocName)
-}
+{ }
 
-xBlockExit::xBlockExit(QString blocName, int nDestinationLayout, int nDestinationX, int ndDestinationY)
+xBlockExit::xBlockExit(QString blocName, int nDestinationLayout, int nDestinationX, int nDestinationY) :
+    xBlock(blocName)
 {
-    xBlock(blocName);
-    xBlockExit.destinationLayout = nDestinationLayout;
-    xBlockExit.destinationX = nDestinationX;
-    xBlockExit.destinationY = nDestinationX;
+    destinationLayout = nDestinationLayout;
+    destinationX = nDestinationX;
+    destinationY = nDestinationY;
 }
 
