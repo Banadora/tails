@@ -1,7 +1,6 @@
 #include "block.h"
 #include "game.h"
 
-#include <QDebug>
 
 extern xGame *game;
 

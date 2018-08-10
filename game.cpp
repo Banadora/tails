@@ -1,6 +1,5 @@
 #include "game.h"
 
-#include <QDebug>
 
 ////////// init
 /*QWidget *parent*/
