@@ -11,6 +11,7 @@ class xBlock : public QObject, public QGraphicsPixmapItem {
 
     Q_OBJECT
 
+protected:
     QString name;
     int width;
     int height;
@@ -20,7 +21,6 @@ class xBlock : public QObject, public QGraphicsPixmapItem {
 
 public:
     xBlock(QString blockName);
-    void keyPressEvent(QKeyEvent *event);
 
     void setName (QString nName);
     QString getName();
