@@ -1,5 +1,11 @@
-
 #include "maplayout.h"
+#include "game.h"
+
+
+xMapLayout::xMapLayout() :
+    startX(1),
+    startY(1)
+{ }
 
 ////////// visually define layout of blocks and hero start position
 void xMapLayout::setLayout(int layoutNumber) {
@@ -19,16 +25,37 @@ void xMapLayout::setLayout(int layoutNumber) {
             layout[9] =   "g1 g0 g0 g1 m2 m1 m4 g0 g1 g1 g0 g1"  ; //y = 9
             layout[10] =  "g1 g0 g0 g0 m0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 10
             layout[11] =  "g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1"  ; //y = 11
+
             startX = 4; startY = 10;
+            exitX = 7; exitY = 0;
             break;
 
         case 2:
+            //          x= 0  1  2  3  4  5  6  7  8  9  10 11
+            layout[0] =   "g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1"  ; //y = 0
+            layout[1] =   "g1 g0 g0 g0 g0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 1
+            layout[2] =   "g1 g0 g0 g0 g0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 2
+            layout[3] =   "g1 g0 g0 g0 g0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 3
+            layout[4] =   "g1 g0 g0 g0 g0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 4
+            layout[5] =   "g1 g0 g0 g0 g0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 5
+            layout[6] =   "g1 g0 g0 g0 g0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 6
+            layout[7] =   "g1 g0 g0 g0 g0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 7
+            layout[8] =   "g1 g0 g0 g0 g0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 8
+            layout[9] =   "g1 g0 g0 g0 g0 g0 g0 m6 g0 g0 g0 g1"  ; //y = 9
+            layout[10] =  "g1 g0 g0 g0 g0 g0 g0 m0 g0 g0 g0 g1"  ; //y = 10
+            layout[11] =  "g1 g1 g1 g1 g1 g1 g1 m0 g1 g1 g1 g1"  ; //y = 11
+
             break;
     }
 }
 
 int xMapLayout::getStartX() { return startX; }
 int xMapLayout::getStartY() { return startY; }
+void xMapLayout::setStartX(int nX) { startX = nX; }
+void xMapLayout::setStartY(int nY) { startY = nY; }
+
+int xMapLayout::getExitX() { return exitX; }
+int xMapLayout::getExitY() { return exitY; }
 
 ////////// get the real name of block from layout identifier
 QString xMapLayout::getBlockName(int x, int y) {
