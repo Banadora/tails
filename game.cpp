@@ -27,10 +27,11 @@ void xGame::paintMap(int nLvl) {
     mapLayout->setLayout(nLvl); //get layout
     for (int x = 0; x < nbBlocksX; x++) {
         for (int y = 0; y < nbBlocksY; y++) {
+            //xBlock block(mapLayout->getBlockName(x,y)); //Using new() methods is not advised in C++ ?
             block = new xBlock(mapLayout->getBlockName(x,y));
             block->setPos(x*PixelsX, y*PixelsY);
             scene->addItem(block);
-            activeBlocks[x][y] = block; //place block in array to access it later
+            activeBlocks[static_cast<unsigned int>(x)][static_cast<unsigned int>(y)].reset(block); //place block in 2D vector to access it later
         }
     }
 
@@ -44,13 +45,13 @@ void xGame::paintMap(int nLvl) {
 
 void xGame::clearMap(int nLvl) {
     if (nLvl != 1) {
-        for (int x = 0; x < nbBlocksX; x++) {
-            for (int y = 0; y < nbBlocksY; y++) {
-                scene->removeItem(activeBlocks[x][y]);
-                delete activeBlocks[x][y];
+        for (unsigned int x = 0; x < nbBlocksX; x++) {               // Remove each block from map
+            for (unsigned int y = 0; y < nbBlocksY; y++) {
+                scene->removeItem(activeBlocks[x][y].get());
             }
         }
-        scene->removeItem(heroBlock);
+        activeBlocks.clear();         //Clear the 2D vector. No need to manually delete the pointers as unique_ptr objects are smart enough so memory management should be fine here.
+        scene->removeItem(heroBlock); //Remove hero from map
     }
 }
 

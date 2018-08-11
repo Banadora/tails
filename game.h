@@ -8,6 +8,8 @@
 #include <QWidget>
 #include <QGraphicsView>
 #include <QGraphicsScene>
+#include <vector>
+#include <memory>
 
 #define nbBlocksX 12
 #define nbBlocksY 12
@@ -30,7 +32,7 @@ public:
     xMapLayout *mapLayout;
     xBlockHero *heroBlock;
     xBlock *block;
-    xBlock *activeBlocks[nbBlocksX][nbBlocksY];
+    std::vector<std::vector<std::unique_ptr<xBlock>>> activeBlocks ;
 };
 
 #endif // GAME_H
