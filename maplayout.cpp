@@ -1,16 +1,25 @@
 #include "maplayout.h"
 #include "game.h"
 
+#include <QDebug>
 
 xMapLayout::xMapLayout() :
-    startX(1),
-    startY(1)
-{
-    for (int i = 0; i < 10; i++) { exitsX[i] = -1; exitsY[i] = -1; }
+    startX(4),
+    startY(10)
+{ }
+
+void xMapLayout::clearExits() {
+    for (int x = 0; x < 10; x++) {
+        for (int y = 0; y < 10; y++) {
+            exits[x][y] = -1;
+        }
+    }
 }
 
 ////////// visually define layout of blocks and hero start position
 void xMapLayout::setLayout(int layoutNumber) {
+    if (layoutNumber == 0) { layoutNumber = 1; } // if init map, map = 1
+    clearExits();
 
     switch (layoutNumber) {
         case 1:
@@ -28,9 +37,12 @@ void xMapLayout::setLayout(int layoutNumber) {
             layout[10] =  "g1 g0 g0 g0 m0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 10
             layout[11] =  "g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1"  ; //y = 11
 
-            startX = 4; startY = 10;
-            exitsX[1] = 7; exitsY[1] = 0;
-            exitsX[2] = 2; exitsY[2] = 0;
+            // exit 1               //exit 2
+            exits[1][0] = 7;        exits[2][0] = 2;     //posX
+            exits[1][1] = 0;        exits[2][1] = 0;     //posY
+            exits[1][2] = 2;        exits[2][2] = 2;     //nLayout
+            exits[1][3] = 7;        exits[2][3] = 2;     //nStartX
+            exits[1][4] = 11;       exits[2][4] = 11;    //nStartY
             break;
 
         case 2:
@@ -48,6 +60,12 @@ void xMapLayout::setLayout(int layoutNumber) {
             layout[10] =  "g1 g0 g0 g0 g0 g0 g0 m0 g0 g0 g0 g1"  ; //y = 10
             layout[11] =  "g1 g1 g0 g1 g1 g1 g1 m0 g1 g1 g1 g1"  ; //y = 11
 
+            // exit 1               //exit 2
+            exits[1][0] = 7;        exits[2][0] = 2;     //posX
+            exits[1][1] = 11;       exits[2][1] = 11;    //posY
+            exits[1][2] = 1;        exits[2][2] = 1;     //nLayout
+            exits[1][3] = 7;        exits[2][3] = 2;     //nStartX
+            exits[1][4] = 0;        exits[2][4] = 0;     //nStartY
             break;
     }
 }
@@ -57,8 +75,28 @@ int xMapLayout::getStartY() { return startY; }
 void xMapLayout::setStartX(int nX) { startX = nX; }
 void xMapLayout::setStartY(int nY) { startY = nY; }
 
-int xMapLayout::getExitsX(int index) { return exitsX[index]; }
-int xMapLayout::getExitsY(int index) { return exitsY[index]; }
+
+////////// check all exits to decide if we need to create xBlockExit or simple xBlock
+bool xMapLayout::isAnExitPos(int x, int y)
+{
+    for (int i = 0; i < 10; i++) {
+        if (   (x == exits[i][0]) && (y == exits[i][1])   ) { activeExit = i; return true; }
+    }
+    return false;
+}
+
+////////// get information of exit
+// iX : exit id
+// iY : information
+//      iY = 0 for exitXPos
+//      iY = 1 for exitYPos
+//      iY = 2 for DestinationLayout
+//      iY = 3 for DestinationStartX
+//      iY = 4 for DestinationStartY
+int xMapLayout::getExits(int iX, int iY) { return exits[iX][iY];}
+
+int xMapLayout::getActiveExit() { return activeExit; }
+
 
 ////////// get the real name of block from layout identifier
 QString xMapLayout::getBlockName(int x, int y) {

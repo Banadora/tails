@@ -18,7 +18,7 @@ xGame::xGame(int viewWidth, int viewHeight) {
 
     //create map
     mapLayout = new xMapLayout;
-    paintMap(1);
+    paintMap(0); //init map
 }
 
 ////////// place blocks on scene based on which mapLayout is called
@@ -30,8 +30,9 @@ void xGame::paintMap(int nLvl) {
     for (int x = 0; x < nbBlocksX; x++) {
         for (int y = 0; y < nbBlocksY; y++) {
 
-            if (    (x == mapLayout->getExitsX(1))   &&    (y == mapLayout->getExitsY(1))   ) { block = new xBlockExit(mapLayout->getBlockName(x,y), 2, 7, 11); } //exit1
-            else if (    (x == mapLayout->getExitsX(2))   &&    (y == mapLayout->getExitsY(2))   ) { block = new xBlockExit(mapLayout->getBlockName(x,y), 2, 2, 11); } //exit2
+            if (mapLayout->isAnExitPos(x,y)) { //check if some exit exist at x,y and make a xBlockExit if true
+                block = new xBlockExit(mapLayout->getBlockName(x,y), mapLayout->getExits(mapLayout->getActiveExit(),2), mapLayout->getExits(mapLayout->getActiveExit(),3), mapLayout->getExits(mapLayout->getActiveExit(),4));
+            }
             else { block = new xBlock(mapLayout->getBlockName(x,y)); }
 
             block->setPos(x*PixelsX, y*PixelsY);
@@ -49,7 +50,7 @@ void xGame::paintMap(int nLvl) {
 }
 
 void xGame::clearMap(int nLvl) {
-    if (nLvl != 1) {
+    if (nLvl != 0) {
         for (int x = 0; x < nbBlocksX; x++) {
             for (int y = 0; y < nbBlocksY; y++) {
                 scene->removeItem(activeBlocks[x][y]);

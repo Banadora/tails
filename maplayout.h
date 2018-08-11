@@ -10,13 +10,14 @@ class xMapLayout {
     QString layout[12];
     int startX;
     int startY;
-    //int exitX;
-    //int exitY;
-    int exitsX[10];
-    int exitsY[10];
+
+    int exits[10][5]; //10 exits composed of posX, posY, nLayout, nStartX, nStartY
+    int activeExit;
 
 public:
     xMapLayout();
+
+    void clearExits();
 
     void setLayout(int layoutNumber);
     int getStartX();
@@ -24,8 +25,9 @@ public:
     void setStartX(int nX);
     void setStartY(int nY);
 
-    int getExitsX(int index);
-    int getExitsY(int index);
+    bool isAnExitPos(int x, int y);
+    int getExits(int iX, int iY);
+    int getActiveExit();
 
     QString getBlockName(int x, int y);
 };
