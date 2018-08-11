@@ -3,8 +3,8 @@
 
 #include "block.h"
 
-class xBlockExit : public xBlock
-{
+
+class xBlockExit : public xBlock {
 
     int destinationLayout;
     int destinationX;
@@ -12,7 +12,7 @@ class xBlockExit : public xBlock
 
 public:
     xBlockExit(QString blocName);
-    xBlockExit(QString blocName,int nDestinationLayout,int nDestinationX,int nDestinationY);
+    xBlockExit(QString blocName, int nDestinationLayout, int nDestinationX, int ndDestinationY);
     int getDestinationLayout() const;
     int getDestinationX() const;
     int getDestinationY() const;

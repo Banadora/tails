@@ -4,6 +4,7 @@
 #include "maplayout.h"
 #include "block.h"
 #include "blockhero.h"
+#include "blockexit.h"
 
 #include <QWidget>
 #include <QGraphicsView>

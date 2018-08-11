@@ -5,7 +5,9 @@
 xMapLayout::xMapLayout() :
     startX(1),
     startY(1)
-{ }
+{
+    for (int i = 0; i < 10; i++) { exitsX[i] = -1; exitsY[i] = -1; }
+}
 
 ////////// visually define layout of blocks and hero start position
 void xMapLayout::setLayout(int layoutNumber) {
@@ -13,7 +15,7 @@ void xMapLayout::setLayout(int layoutNumber) {
     switch (layoutNumber) {
         case 1:
             //          x= 0  1  2  3  4  5  6  7  8  9  10 11
-            layout[0] =   "g1 g1 g1 g1 g1 g1 g1 m0 g1 g1 g1 g1"  ; //y = 0
+            layout[0] =   "g1 g1 g0 g1 g1 g1 g1 m0 g1 g1 g1 g1"  ; //y = 0
             layout[1] =   "g1 g0 g0 g0 g1 g0 g0 m0 g1 g0 g0 g1"  ; //y = 1
             layout[2] =   "g1 g0 g1 g0 g1 m2 m1 m4 g1 g0 g0 g1"  ; //y = 2
             layout[3] =   "g1 g0 g0 g0 g0 m0 g1 g1 g0 g0 g0 g1"  ; //y = 3
@@ -27,7 +29,8 @@ void xMapLayout::setLayout(int layoutNumber) {
             layout[11] =  "g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1"  ; //y = 11
 
             startX = 4; startY = 10;
-            exitX = 7; exitY = 0;
+            exitsX[1] = 7; exitsY[1] = 0;
+            exitsX[2] = 2; exitsY[2] = 0;
             break;
 
         case 2:
@@ -43,7 +46,7 @@ void xMapLayout::setLayout(int layoutNumber) {
             layout[8] =   "g1 g0 g0 g0 g0 g0 g0 g0 g0 g0 g0 g1"  ; //y = 8
             layout[9] =   "g1 g0 g0 g0 g0 g0 g0 m6 g0 g0 g0 g1"  ; //y = 9
             layout[10] =  "g1 g0 g0 g0 g0 g0 g0 m0 g0 g0 g0 g1"  ; //y = 10
-            layout[11] =  "g1 g1 g1 g1 g1 g1 g1 m0 g1 g1 g1 g1"  ; //y = 11
+            layout[11] =  "g1 g1 g0 g1 g1 g1 g1 m0 g1 g1 g1 g1"  ; //y = 11
 
             break;
     }
@@ -54,8 +57,8 @@ int xMapLayout::getStartY() { return startY; }
 void xMapLayout::setStartX(int nX) { startX = nX; }
 void xMapLayout::setStartY(int nY) { startY = nY; }
 
-int xMapLayout::getExitX() { return exitX; }
-int xMapLayout::getExitY() { return exitY; }
+int xMapLayout::getExitsX(int index) { return exitsX[index]; }
+int xMapLayout::getExitsY(int index) { return exitsY[index]; }
 
 ////////// get the real name of block from layout identifier
 QString xMapLayout::getBlockName(int x, int y) {

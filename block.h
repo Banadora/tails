@@ -32,6 +32,11 @@ public:
 
     void defineIfObstacle(QString blockName);
     bool isObstacle();
+
+    //virtual exit funcs:
+    virtual int getDestinationLayout() const;
+    virtual getDestinationX() const;
+    virtual getDestinationY() const;
 };
 
 #endif // BLOCK_H

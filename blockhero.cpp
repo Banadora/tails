@@ -1,6 +1,8 @@
 #include "blockhero.h"
 #include "game.h"
 
+#include <QDebug>
+
 extern xGame *game;
 
 
@@ -11,10 +13,10 @@ xBlockHero::xBlockHero(QString blocName) :
 ////////// get pressed key and take actions (only on focused item)
 void xBlockHero::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Up) {
-        if (x == game->mapLayout->getExitX() && y == game->mapLayout->getExitY()) {
-            game->mapLayout->setStartX(x);
-            game->mapLayout->setStartY(nbBlocksY-1);
-            game->paintMap(2);
+        if(typeid(*(game->activeBlocks[x][y])) == typeid(xBlockExit)) {
+            game->mapLayout->setStartX(game->activeBlocks[x][y]->getDestinationX());
+            game->mapLayout->setStartY(game->activeBlocks[x][y]->getDestinationY());
+            game->paintMap(game->activeBlocks[x][y]->getDestinationLayout());
         }
         else {
             if (     (y > 0)       &&    (game->activeBlocks[x][y-1]->isObstacle() == false)     ) { //move only if destination is in map and not an obstacle

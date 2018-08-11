@@ -30,3 +30,9 @@ void xBlock::defineIfObstacle(QString name) {
 bool xBlock::isObstacle() { return obstacle; }
 
 
+////////// virtual funcs
+int xBlock::getDestinationLayout() const { return -1; }
+xBlock::getDestinationX() const { return -1; }
+xBlock::getDestinationY() const { return -1; }
+
+
