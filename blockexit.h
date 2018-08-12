@@ -11,6 +11,7 @@ class xBlockExit : public xBlock
     int destinationY;
 
 public:
+    xBlockExit();
     xBlockExit(QString blocName);
     xBlockExit(QString blocName,int nDestinationLayout,int nDestinationX,int nDestinationY);
     int getDestinationLayout() const;

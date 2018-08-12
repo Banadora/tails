@@ -21,6 +21,10 @@ int xBlockExit::getDestinationY() const
 
 ///////////////////////////////////////////////Constructors
 ///
+///
+xBlockExit::xBlockExit() :
+    xBlock()
+{ }
 
 xBlockExit::xBlockExit(QString blocName) :
     xBlock(blocName)

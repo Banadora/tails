@@ -5,6 +5,13 @@
 extern xGame *game;
 
 ////////// init
+
+xBlock::xBlock() :
+    name(),
+    obstacle(false)
+{}
+
+
 xBlock::xBlock(QString blockName) :
     name(blockName),
     obstacle(false)

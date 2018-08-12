@@ -1,5 +1,8 @@
+#include "block.h"
 #include "blockhero.h"
+#include "blockexit.h"
 #include "game.h"
+
 
 extern xGame *game;
 
@@ -12,7 +15,9 @@ xBlockHero::xBlockHero(QString blocName) :
 void xBlockHero::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Up) {
         if (x == game->mapLayout->getExitX() && y == game->mapLayout->getExitY()) {
-            game->mapLayout->setStartX(x);
+            xBlockExit exit;
+            exit = game->activeBlocks[x][y].get();
+            game->mapLayout->setStartX(game->activeBlocks[x][y].get()->getX());
             game->mapLayout->setStartY(nbBlocksY-1);
             game->paintMap(2);
         }

@@ -20,6 +20,7 @@ protected:
     bool obstacle;
 
 public:
+    xBlock();
     xBlock(QString blockName);
 
     void setName (QString nName);
