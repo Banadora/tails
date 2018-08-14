@@ -35,8 +35,8 @@ public:
 
     //virtual exit funcs:
     virtual int getDestinationLayout() const;
-    virtual getDestinationX() const;
-    virtual getDestinationY() const;
+    virtual int getDestinationX() const;
+    virtual int getDestinationY() const;
 };
 
 #endif // BLOCK_H

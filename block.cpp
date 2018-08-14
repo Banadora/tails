@@ -32,7 +32,7 @@ bool xBlock::isObstacle() { return obstacle; }
 
 ////////// virtual funcs
 int xBlock::getDestinationLayout() const { return -1; }
-xBlock::getDestinationX() const { return -1; }
-xBlock::getDestinationY() const { return -1; }
+int xBlock::getDestinationX() const { return -1; }
+int xBlock::getDestinationY() const { return -1; }
 
 
