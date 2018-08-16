@@ -14,6 +14,7 @@
 #define nbBlocksY 12
 #define PixelsX 32      //blocks width in pixels
 #define PixelsY 32      //blocks height in pixels
+#define PixelsMove 8   //move distance in pixels
 
 
 
