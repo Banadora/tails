@@ -4,15 +4,11 @@ diagrams
   classdiagram_ref 134661 // Map Diagram
     1172 693 100 A4 0 0
   active  classdiagram_ref 141189 // Character Diagram
-    1172 693 115 A4 0 0
+    1172 693 114 A4 0 0
 end
 show_stereotypes
-selected class_ref 157701 // Character
+selected classview_ref 134661 // Tails
 open
-  class_ref 136453 // QObject
-  class_ref 137477 // QMainWindow
-  class_ref 136581 // QGraphicsPixmapItem
   classview_ref 134789 // Class View
-  deploymentview_ref 141317 // Tails
 end
 end
