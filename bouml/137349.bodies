@@ -1,0 +1,10 @@
+class xMainWindow
+!!!141317.cpp!!!	xMainWindow(inout parent : QWidget = nullptr)
+
+    ui->setupUi(this);
+
+    game = new xGame(ui->view->width()-2, ui->view->height()-2);
+    ui->view->setScene(game->scene);
+!!!141445.cpp!!!	~xMainWindow()
+
+    delete ui;

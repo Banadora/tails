@@ -27,17 +27,25 @@ SOURCES += \
         mainwindow.cpp \
     game.cpp \
     maplayout.cpp \
-    block.cpp \
     blockhero.cpp \
-    blockexit.cpp
+    blockexit.cpp \
+    SceneBlock.cpp \
+    Map.cpp \
+    Character.cpp \
+    CharacterView.cpp \
+    Directions.cpp
 
 HEADERS += \
         mainwindow.h \
     game.h \
     maplayout.h \
-    block.h \
     blockhero.h \
-    blockexit.h
+    blockexit.h \
+    SceneBlock.h \
+    Map.h \
+    Character.h \
+    CharacterView.h \
+    Directions.h
 
 FORMS += \
         mainwindow.ui
