@@ -1,0 +1,34 @@
+format 220
+
+classcanvas 129925 class_ref 150917 // CharacterView
+  classdiagramsettings member_max_width 0 end
+  xyz 397.72 182.059 2006
+end
+classcanvas 130053 class_ref 136581 // QGraphicsPixmapItem
+  classdiagramsettings member_max_width 0 end
+  xyz 453.901 51.8026 2000
+end
+classcanvas 130821 class_ref 151045 // QKeyEvent
+  classdiagramsettings member_max_width 0 end
+  xyz 765.232 205.003 2000
+end
+classcanvas 131077 class_ref 157701 // Character
+  classdiagramsettings member_max_width 0 end
+  xyz 93.32 211.72 2000
+end
+relationcanvas 130693 relation_ref 158725 // <generalisation>
+  from ref 129925 z 2007 to ref 130053
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130949 relation_ref 158853 // <dependency>
+  from ref 130821 z 2007 stereotype "<<instantiate>>" xyz 673 233 2007 to ref 129925
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131205 relation_ref 165381 // <directional composition>
+  from ref 131077 z 2007 to ref 129925
+  role_a_pos 320 219 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

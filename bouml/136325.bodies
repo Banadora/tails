@@ -1,0 +1,8 @@
+class SceneBlock
+!!!138757.cpp!!!	SceneBlock(in blockName : QString)
+
+    setPixmap(QPixmap(":/img/" + blockName + ".png"));
+!!!149381.cpp!!!	get_obstacle() : bool
+  return obstacle;
+!!!149509.cpp!!!	set_obstacle(in value : bool) : void
+  obstacle = value;

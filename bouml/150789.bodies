@@ -1,0 +1,4 @@
+class Character
+!!!169989.cpp!!!	Character(in QItemName : QString)
+    //Create a CharacterView Object. Call a constructor so that the QItemName is passed and the View gets the right picture.
+    //Make sure the View is saved as part a Character data with setcharacterView

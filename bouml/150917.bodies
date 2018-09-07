@@ -1,0 +1,11 @@
+class CharacterView
+!!!176773.cpp!!!	CharacterView(in QItemName : QString)
+
+    setPixmap(QPixmap(":/img/" + QItemName + ".png"));
+!!!163077.cpp!!!	move(in x : int, in y : int) : void
+
+    //Move the character from its current position to the specified position. Stop the process if an obstacle is in the way.
+!!!169605.cpp!!!	setFacingDirection(in direction : Directions) : void
+    // For each character design, need pictures facing different directions. Load the right picture for the specified direction.
+!!!169733.cpp!!!	move(in direction : Directions) : void
+    //Move the character to the specified direction.

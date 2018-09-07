@@ -1,0 +1,14 @@
+window_sizes 1920 1017 450 1465 867 104
+
+diagrams
+  classdiagram_ref 134661 // Map Diagram
+    1172 693 100 A4 0 0
+  active  classdiagram_ref 141189 // Character Diagram
+    1172 693 114 A4 0 0
+end
+show_stereotypes
+selected classview_ref 134661 // Tails
+open
+  classview_ref 134789 // Class View
+end
+end

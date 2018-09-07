@@ -1,0 +1,4 @@
+class Character
+!!!183301.cpp!!!	Character(in QItemName : QString)
+    //Creates the CharacterView with the picture specified
+
