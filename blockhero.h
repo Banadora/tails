@@ -9,7 +9,7 @@ class xBlockHero : public xBlock {
 public:
     xBlockHero(QString blocName);
 
-    void keyPressEvent(QKeyEvent *event);
+    void move(QString direction);
 };
 
 #endif // BLOCKHERO_H

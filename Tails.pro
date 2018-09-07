@@ -30,7 +30,8 @@ SOURCES += \
     block.cpp \
     blockhero.cpp \
     blockexit.cpp \
-    character.cpp
+    character.cpp \
+    eventfilter.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -39,7 +40,8 @@ HEADERS += \
     block.h \
     blockhero.h \
     blockexit.h \
-    character.h
+    character.h \
+    eventfilter.h
 
 FORMS += \
         mainwindow.ui

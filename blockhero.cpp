@@ -13,10 +13,10 @@ xBlockHero::xBlockHero(QString blocName) :
 { }
 
 ////////// get pressed key and take actions (only on focused item)
-void xBlockHero::keyPressEvent(QKeyEvent *event) {
+void xBlockHero::move(QString direction) {
 
     //key up pressed
-    if (event->key() == Qt::Key_Up) {
+    if (direction == "north") {
 
         xBlock *topleft = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x(), pos().y()-PixelsMove), QTransform()));
         xBlock *topright = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()+PixelsX-1, pos().y()-PixelsMove), QTransform()));
@@ -24,7 +24,7 @@ void xBlockHero::keyPressEvent(QKeyEvent *event) {
     }
 
     //key down pressed
-    else if (event->key() == Qt::Key_Down) {
+    else if (direction == "south") {
 
         xBlock *bottomleft = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x(), pos().y()+PixelsY-1+PixelsMove), QTransform()));
         xBlock *bottomright = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()+PixelsX-1, pos().y()+PixelsY-1+PixelsMove), QTransform()));
@@ -32,7 +32,7 @@ void xBlockHero::keyPressEvent(QKeyEvent *event) {
     }
 
     //key left pressed
-    else if (event->key() == Qt::Key_Left) {
+    else if (direction == "west") {
 
         xBlock *topleft = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()-PixelsMove, pos().y()), QTransform()));
         xBlock *bottomleft = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()-PixelsMove, pos().y()+PixelsY-1), QTransform()));
@@ -40,13 +40,11 @@ void xBlockHero::keyPressEvent(QKeyEvent *event) {
     }
 
     //key right pressed
-    else if (event->key() == Qt::Key_Right) {
+    else if (direction == "east") {
 
         xBlock *topright = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()+PixelsX-1+PixelsMove, pos().y()), QTransform()));
         xBlock *bottomright = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()+PixelsX-1+PixelsMove, pos().y()+PixelsY-1), QTransform()));
         if (    (topright->isObstacle() == false) && (bottomright->isObstacle() == false)    )  { setPos(pos().x()+PixelsMove, pos().y()); }
     }
 
-
-    else if (event->key() == Qt::Key_Space) {  }
 }
