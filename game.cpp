@@ -14,7 +14,7 @@ xGame::xGame(int viewWidth, int viewHeight) {
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     //create hero
-    heroBlock = new xBlockHero("hero");
+    hero = new xCharacter;
 
     //create map
     mapLayout = new xMapLayout;
@@ -30,10 +30,7 @@ void xGame::paintMap(int nLvl) {
     for (int x = 0; x < nbBlocksX; x++) {
         for (int y = 0; y < nbBlocksY; y++) {
 
-            if (mapLayout->isAnExitPos(x,y)) { //check if some exit exist at x,y and make a xBlockExit if true
-                block = new xBlockExit(mapLayout->getBlockName(x,y), mapLayout->getExits(mapLayout->getActiveExit(),2), mapLayout->getExits(mapLayout->getActiveExit(),3), mapLayout->getExits(mapLayout->getActiveExit(),4));
-            }
-            else { block = new xBlock(mapLayout->getBlockName(x,y)); }
+            block = new xBlock(mapLayout->getBlockName(x,y));
 
             block->setPos(x*PixelsX, y*PixelsY);
             scene->addItem(block);
@@ -41,12 +38,8 @@ void xGame::paintMap(int nLvl) {
         }
     }
 
-    heroBlock->setFlag(QGraphicsItem::ItemIsFocusable);
-    heroBlock->setFocus();
-    heroBlock->setPos(mapLayout->getStartX()*PixelsX, mapLayout->getStartY()*PixelsY); //place heroBlock on scene
-    heroBlock->setX(mapLayout->getStartX());
-    heroBlock->setY(mapLayout->getStartY());
-    scene->addItem(heroBlock);
+    hero->setViewPos(mapLayout->getStartX()*PixelsX, mapLayout->getStartY()*PixelsY); //place heroBlock on scene
+    scene->addItem(hero->getView());
 }
 
 void xGame::clearMap(int nLvl) {
@@ -57,7 +50,7 @@ void xGame::clearMap(int nLvl) {
                 delete activeBlocks[x][y];
             }
         }
-        scene->removeItem(heroBlock);
+        scene->removeItem(hero);
     }
 }
 

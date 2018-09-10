@@ -1,19 +1,19 @@
-#include "blockhero.h"
-#include "game.h"
+#include "characterview.h"
 #include "block.h"
-
+#include "game.h"
 
 #include <QDebug>
 
+
 extern xGame *game;
 
+////////// get direction from eventfilter and take actions
+xCharacterView::xCharacterView()
+{
+    setPixmap(QPixmap(":/img/hero.png"));
+}
 
-xBlockHero::xBlockHero(QString blocName) :
-    xBlock(blocName)
-{ }
-
-////////// get pressed key and take actions (only on focused item)
-void xBlockHero::move(QString direction) {
+void xCharacterView::move(QString direction) {
 
     //key up pressed
     if (direction == "north") {

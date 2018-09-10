@@ -30,14 +30,14 @@ bool xEventFilter::eventFilter(QObject *obj, QEvent *event)
 
     switch(keyEvent->key()) {
         //selection movements
-        case Qt::Key_Z:         { game->heroBlock->move("north"); break; }
-        case Qt::Key_Up:        { game->heroBlock->move("north"); break; }
-        case Qt::Key_S:         { game->heroBlock->move("south"); break; }
-        case Qt::Key_Down:      { game->heroBlock->move("south"); break; }
-        case Qt::Key_Q:         { game->heroBlock->move("west"); break; }
-        case Qt::Key_Left:      { game->heroBlock->move("west"); break; }
-        case Qt::Key_D:         { game->heroBlock->move("east"); break; }
-        case Qt::Key_Right:     { game->heroBlock->move("east"); break; }
+        case Qt::Key_Z:         { game->hero->move("north"); break; }
+        case Qt::Key_Up:        { game->hero->move("north"); break; }
+        case Qt::Key_S:         { game->hero->move("south"); break; }
+        case Qt::Key_Down:      { game->hero->move("south"); break; }
+        case Qt::Key_Q:         { game->hero->move("west"); break; }
+        case Qt::Key_Left:      { game->hero->move("west"); break; }
+        case Qt::Key_D:         { game->hero->move("east"); break; }
+        case Qt::Key_Right:     { game->hero->move("east"); break; }
 
         case Qt::Key_Space:     { break; }
 

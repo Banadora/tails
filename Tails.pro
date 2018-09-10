@@ -28,20 +28,18 @@ SOURCES += \
     game.cpp \
     maplayout.cpp \
     block.cpp \
-    blockhero.cpp \
-    blockexit.cpp \
     character.cpp \
-    eventfilter.cpp
+    eventfilter.cpp \
+    characterview.cpp
 
 HEADERS += \
         mainwindow.h \
     game.h \
     maplayout.h \
     block.h \
-    blockhero.h \
-    blockexit.h \
     character.h \
-    eventfilter.h
+    eventfilter.h \
+    characterview.h
 
 FORMS += \
         mainwindow.ui

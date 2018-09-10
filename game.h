@@ -2,9 +2,8 @@
 #define GAME_H
 
 #include "maplayout.h"
+#include "character.h"
 #include "block.h"
-#include "blockhero.h"
-#include "blockexit.h"
 
 #include <QWidget>
 #include <QGraphicsView>
@@ -30,7 +29,7 @@ public:
 
     QGraphicsScene *scene;
     xMapLayout *mapLayout;
-    xBlockHero *heroBlock;
+    xCharacter *hero;
     xBlock *block;
     xBlock *activeBlocks[nbBlocksX][nbBlocksY];
 };

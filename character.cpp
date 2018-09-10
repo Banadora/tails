@@ -4,17 +4,20 @@
 
 extern xGame *game;
 
-void xCharacter::Character()
-{
+xCharacter::xCharacter()
+{ }
 
+void xCharacter::setViewPos(int nX, int nY)
+{
+    view.setPos(nX, nY);
 }
 
-void xCharacter :: moveNorth(){
+xCharacterView* xCharacter::getView()
+{
+    return &view;
+}
 
-    xBlock *topleft = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x(), pos().y()-PixelsMove), QTransform()));
-    xBlock *topright = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()+PixelsX-1, pos().y()-PixelsMove), QTransform()));
-    if (    (topleft->isObstacle() == false) && (topright->isObstacle() == false)    )  {
-        setPos(pos().x(), pos().y()-PixelsMove); }
-
-
+void xCharacter::move(QString direction)
+{
+    view.move(direction);
 }

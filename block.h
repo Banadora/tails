@@ -13,10 +13,6 @@ class xBlock : public QObject, public QGraphicsPixmapItem {
 
 protected:
     QString name;
-    int width;
-    int height;
-    int x;
-    int y;
     bool obstacle;
 
 public:
@@ -24,11 +20,6 @@ public:
 
     void setName (QString nName);
     QString getName();
-
-    void setX (int nX);
-    void setY (int nY);
-    int getX();
-    int getY();
 
     void defineIfObstacle(QString blockName);
     bool isObstacle();
