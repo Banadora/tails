@@ -1,0 +1,1317 @@
+{
+    "blocks": [
+        {
+            "name": "mud1.png",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 64
+        },
+        {
+            "name": "mud1.png",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 64
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 64
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 64
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 64
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 32
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 96
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 128
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 160
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 192
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 224
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 256
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 288
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 320
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 32
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 96
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 128
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 256
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 288
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 320
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 32
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 64
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 96
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 320
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 32
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 64
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 96
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 320
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 32
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 64
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 96
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 128
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 320
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 32
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 64
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 96
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 224
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 320
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 32
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 64
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 96
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 320
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 32
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 64
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 96
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 320
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 32
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 64
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 96
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 32
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 96
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 128
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 128
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 32,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 64,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 96,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 128,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 160,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 192,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 224,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 256,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 288,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 320,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 0
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 352,
+            "ypos": 0
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 32
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 352,
+            "ypos": 32
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 96
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 352,
+            "ypos": 96
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 128
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 352,
+            "ypos": 128
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 160
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 352,
+            "ypos": 160
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 192
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 352,
+            "ypos": 192
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 224
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 352,
+            "ypos": 224
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 256
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 352,
+            "ypos": 256
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 288
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 352,
+            "ypos": 288
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 320
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 352,
+            "ypos": 320
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 352,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 352,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 320,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 288,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 256,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 224,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 192,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 160,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 128,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 96,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 64,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 32,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 32,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 352
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 352
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 320
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 320
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 288
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 288
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 256
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 256
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 224
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 224
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 192
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 192
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 160
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 160
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 128
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 128
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 96
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 96
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 0,
+            "ypos": 32
+        },
+        {
+            "name": "grass1.png",
+            "obstacle": true,
+            "xpos": 0,
+            "ypos": 32
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 320
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 320
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 288
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 128
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 288
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 288
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 288
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 224
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 192
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 160
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 128
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 128
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 224
+        },
+        {
+            "name": "water4.png",
+            "obstacle": true,
+            "xpos": 96,
+            "ypos": 224
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 256
+        },
+        {
+            "name": "water0.png",
+            "obstacle": true,
+            "xpos": 128,
+            "ypos": 256
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 192
+        },
+        {
+            "name": "water0.png",
+            "obstacle": true,
+            "xpos": 128,
+            "ypos": 192
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 192
+        },
+        {
+            "name": "water4.png",
+            "obstacle": true,
+            "xpos": 96,
+            "ypos": 192
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 160
+        },
+        {
+            "name": "water6.png",
+            "obstacle": true,
+            "xpos": 96,
+            "ypos": 160
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 160
+        },
+        {
+            "name": "water1.png",
+            "obstacle": true,
+            "xpos": 128,
+            "ypos": 160
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 160
+        },
+        {
+            "name": "water1.png",
+            "obstacle": true,
+            "xpos": 160,
+            "ypos": 160
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 288
+        },
+        {
+            "name": "water3.png",
+            "obstacle": true,
+            "xpos": 160,
+            "ypos": 288
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 256
+        },
+        {
+            "name": "water1.png",
+            "obstacle": true,
+            "xpos": 192,
+            "ypos": 256
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 288
+        },
+        {
+            "name": "water8.png",
+            "obstacle": true,
+            "xpos": 192,
+            "ypos": 288
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 256
+        },
+        {
+            "name": "water3.png",
+            "obstacle": true,
+            "xpos": 256,
+            "ypos": 256
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 192
+        },
+        {
+            "name": "water2.png",
+            "obstacle": true,
+            "xpos": 320,
+            "ypos": 192
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 224
+        },
+        {
+            "name": "water0.png",
+            "obstacle": true,
+            "xpos": 288,
+            "ypos": 224
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 224
+        },
+        {
+            "name": "water0.png",
+            "obstacle": true,
+            "xpos": 256,
+            "ypos": 224
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 160
+        },
+        {
+            "name": "water5.png",
+            "obstacle": true,
+            "xpos": 256,
+            "ypos": 160
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 160
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 160
+        },
+        {
+            "name": "water9.png",
+            "obstacle": true,
+            "xpos": 320,
+            "ypos": 160
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 192
+        },
+        {
+            "name": "water1.png",
+            "obstacle": true,
+            "xpos": 288,
+            "ypos": 192
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 128
+        },
+        {
+            "name": "water5.png",
+            "obstacle": true,
+            "xpos": 224,
+            "ypos": 128
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 128
+        },
+        {
+            "name": "water6.png",
+            "obstacle": true,
+            "xpos": 192,
+            "ypos": 128
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 256
+        },
+        {
+            "name": "water3.png",
+            "obstacle": true,
+            "xpos": 224,
+            "ypos": 256
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 192
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 224
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 192,
+            "ypos": 160
+        },
+        {
+            "name": "water3.png",
+            "obstacle": true,
+            "xpos": 192,
+            "ypos": 160
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 192
+        },
+        {
+            "name": "water8.png",
+            "obstacle": true,
+            "xpos": 160,
+            "ypos": 192
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 224
+        },
+        {
+            "name": "water2.png",
+            "obstacle": true,
+            "xpos": 128,
+            "ypos": 224
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 160,
+            "ypos": 256
+        },
+        {
+            "name": "water1.png",
+            "obstacle": true,
+            "xpos": 160,
+            "ypos": 256
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 256
+        },
+        {
+            "name": "water7.png",
+            "obstacle": true,
+            "xpos": 96,
+            "ypos": 256
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 128,
+            "ypos": 288
+        },
+        {
+            "name": "water7.png",
+            "obstacle": true,
+            "xpos": 128,
+            "ypos": 288
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 96,
+            "ypos": 288
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 256
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 288,
+            "ypos": 256
+        },
+        {
+            "name": "water8.png",
+            "obstacle": true,
+            "xpos": 288,
+            "ypos": 256
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 320,
+            "ypos": 224
+        },
+        {
+            "name": "water8.png",
+            "obstacle": true,
+            "xpos": 320,
+            "ypos": 224
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 160
+        },
+        {
+            "name": "water3.png",
+            "obstacle": true,
+            "xpos": 224,
+            "ypos": 160
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 256,
+            "ypos": 192
+        },
+        {
+            "name": "water4.png",
+            "obstacle": true,
+            "xpos": 256,
+            "ypos": 192
+        },
+        {
+            "name": "redfilter",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 224
+        },
+        {
+            "name": "water6.png",
+            "obstacle": true,
+            "xpos": 224,
+            "ypos": 224
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 224,
+            "ypos": 192
+        },
+        {
+            "name": "grass0.png",
+            "obstacle": false,
+            "xpos": 64,
+            "ypos": 64
+        }
+    ],
+    "mapEast": "plains",
+    "mapNorth": "none",
+    "mapSouth": "none",
+    "mapWest": "none",
+    "name": "lake"
+}

@@ -14,5 +14,16 @@
         <file>maps/forest.json</file>
         <file>maps/garden.json</file>
         <file>maps/plains.json</file>
+        <file>maps/lake.json</file>
+        <file>img/water0.png</file>
+        <file>img/water1.png</file>
+        <file>img/water2.png</file>
+        <file>img/water3.png</file>
+        <file>img/water4.png</file>
+        <file>img/water5.png</file>
+        <file>img/water6.png</file>
+        <file>img/water7.png</file>
+        <file>img/water8.png</file>
+        <file>img/water9.png</file>
     </qresource>
 </RCC>
