@@ -12,7 +12,8 @@ xMapLayout::xMapLayout() :
 
 void xMapLayout::loadMap(QString nName) {
     //open file and convert to byteArray
-    QFile file(nName + ".json");
+    //QFile file(nName + ".json");
+    QFile file(":/maps/" + nName + ".json");
     if(!file.open(QIODevice::ReadOnly)) { qDebug() << "Failed to open " << name + ".json"; exit(1); }
     QTextStream file_text(&file);
     QString fullJsonString;
@@ -45,9 +46,28 @@ void xMapLayout::loadMap(QString nName) {
     }
     name = rootMap["name"].toString();
     qDebug() << "~~~~ Map loaded ~~~~" << '\n' << name;
+
+    //set surrounding maps
+    setMaps(rootMap["mapNorth"].toString(), rootMap["mapEast"].toString(), rootMap["mapSouth"].toString(), rootMap["mapWest"].toString());
+    qDebug() << mapNorth << mapEast << mapSouth << mapWest;
 }
 
 int xMapLayout::getStartX() { return startX; }
 int xMapLayout::getStartY() { return startY; }
 void xMapLayout::setStartX(int nX) { startX = nX; }
 void xMapLayout::setStartY(int nY) { startY = nY; }
+
+void xMapLayout::setMaps(QString nMapNorth, QString nMapEast, QString nMapSouth, QString nMapWest) {
+    mapNorth = nMapNorth;
+    mapEast = nMapEast;
+    mapSouth = nMapSouth;
+    mapWest = nMapWest;
+}
+
+QString xMapLayout::getNextMap(QString direction) {
+    if (direction == "north") {return mapNorth; }
+    else if (direction == "east") {return mapEast; }
+    else if (direction == "south") {return mapSouth; }
+    else if (direction == "west") {return mapWest; }
+    else {return "none"; }
+}
