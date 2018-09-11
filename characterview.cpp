@@ -15,17 +15,15 @@ xCharacterView::xCharacterView()
 
 void xCharacterView::move(QString direction) {
 
+    QPointF oldPos(pos().x(), pos().y());
+
     //key up pressed
     if (direction == "north") {
         if (pos().y()-PixelsMove < 0) {
             game->mapLayout->loadMap(game->mapLayout->getNextMap("north"));
             setPos(pos().x(), PixelsY*(nbBlocksY-1));
         }
-        else {
-            xBlock *topleft = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x(), pos().y()-PixelsMove), QTransform()));
-            xBlock *topright = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()+PixelsX-1, pos().y()-PixelsMove), QTransform()));
-            if (    (topleft->getIsObstacle() == false) && (topright->getIsObstacle() == false)    )  { setPos(pos().x(), pos().y()-PixelsMove); }
-        }
+        else { setPos(pos().x(), pos().y()-PixelsMove); }
     }
 
     //key down pressed
@@ -34,11 +32,7 @@ void xCharacterView::move(QString direction) {
             game->mapLayout->loadMap(game->mapLayout->getNextMap("south"));
             setPos(pos().x(), 0);
         }
-        else {
-            xBlock *bottomleft = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x(), pos().y()+PixelsY-1+PixelsMove), QTransform()));
-            xBlock *bottomright = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()+PixelsX-1, pos().y()+PixelsY-1+PixelsMove), QTransform()));
-            if (    (bottomleft->getIsObstacle() == false) && (bottomright->getIsObstacle() == false)    )  { setPos(pos().x(), pos().y()+PixelsMove); }
-        }
+        else { setPos(pos().x(), pos().y()+PixelsMove); }
     }
 
     //key left pressed
@@ -47,11 +41,7 @@ void xCharacterView::move(QString direction) {
             game->mapLayout->loadMap(game->mapLayout->getNextMap("west"));
             setPos(PixelsX*(nbBlocksX-1), pos().y());
         }
-        else {
-            xBlock *topleft = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()-PixelsMove, pos().y()), QTransform()));
-            xBlock *bottomleft = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()-PixelsMove, pos().y()+PixelsY-1), QTransform()));
-            if (    (topleft->getIsObstacle() == false) && (bottomleft->getIsObstacle() == false)    )  { setPos(pos().x()-PixelsMove, pos().y()); }
-        }
+        else { setPos(pos().x()-PixelsMove, pos().y()); }
     }
 
     //key right pressed
@@ -60,11 +50,14 @@ void xCharacterView::move(QString direction) {
             game->mapLayout->loadMap(game->mapLayout->getNextMap("east"));
             setPos(0, pos().y());
         }
-        else {
-            xBlock *topright = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()+PixelsX-1+PixelsMove, pos().y()), QTransform()));
-            xBlock *bottomright = dynamic_cast<xBlock*>(game->scene->itemAt(QPointF(pos().x()+PixelsX-1+PixelsMove, pos().y()+PixelsY-1), QTransform()));
-            if (    (topright->getIsObstacle() == false) && (bottomright->getIsObstacle() == false)    )  { setPos(pos().x()+PixelsMove, pos().y()); }
-        }
+        else { setPos(pos().x()+PixelsMove, pos().y()); }
     }
 
+    //check is new pos is on obstacle, if true get back to old pos
+    QList<QGraphicsItem *> colliding_items = collidingItems();
+    for (int i = 0, n = colliding_items.size(); i < n; ++i) {
+        if (typeid(*(colliding_items[i])) == typeid(xBlock)) {
+            if (dynamic_cast<xBlock*>(colliding_items[i])->getIsObstacle()) { setPos(oldPos); }
+        }
+    }
 }
