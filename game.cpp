@@ -1,10 +1,14 @@
 #include "game.h"
 
+#include <QBrush>
+#include <QImage>
+#include <QPointF>
+#include <QString>
+#include <QList>
 #include <QDebug>
 
-////////// init
-/*QWidget *parent*/
-xGame::xGame(int viewWidth, int viewHeight) {
+
+xGame::xGame(int viewWidth, int viewHeight): QGraphicsView () {
 
     //create the scene
     scene = new QGraphicsScene();
@@ -13,44 +17,30 @@ xGame::xGame(int viewWidth, int viewHeight) {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
+    //create strating map
+    mapLayout = new xMapLayout;
+
     //create hero
     hero = new xCharacter;
-
-    //create map
-    mapLayout = new xMapLayout;
-    paintMap(0); //init map
-}
-
-////////// place blocks on scene based on which mapLayout is called
-void xGame::paintMap(int nLvl) {
-
-    clearMap(nLvl);
-    mapLayout->setLayout(nLvl); //get layout
-
-    for (int x = 0; x < nbBlocksX; x++) {
-        for (int y = 0; y < nbBlocksY; y++) {
-
-            block = new xBlock(mapLayout->getBlockName(x,y));
-
-            block->setPos(x*PixelsX, y*PixelsY);
-            scene->addItem(block);
-            activeBlocks[x][y] = block; //place block in array to access it later
-        }
-    }
-
     hero->setViewPos(mapLayout->getStartX()*PixelsX, mapLayout->getStartY()*PixelsY); //place heroBlock on scene
+    hero->getView()->setZValue(10); //set hero view on top of map
     scene->addItem(hero->getView());
 }
 
-void xGame::clearMap(int nLvl) {
-    if (nLvl != 0) {
-        for (int x = 0; x < nbBlocksX; x++) {
-            for (int y = 0; y < nbBlocksY; y++) {
-                scene->removeItem(activeBlocks[x][y]);
-                delete activeBlocks[x][y];
-            }
+void xGame::placeBlock(int xpos, int ypos, QString blockName, bool isObs) {
+    //place new block
+    block = new xBlock(blockName, isObs);
+    block->setPos(xpos, ypos);
+    scene->addItem(block);
+
+    //remove old block
+    QList<QGraphicsItem *> colliding_items = block->collidingItems();
+    for (int i = 0, n = colliding_items.size(); i < n; ++i) {
+        if (typeid(*(colliding_items[i])) == typeid(xBlock)) {
+            scene->removeItem(colliding_items[i]);
+            delete colliding_items[i];
         }
-        scene->removeItem(hero);
     }
 }
+
 

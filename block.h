@@ -13,21 +13,15 @@ class xBlock : public QObject, public QGraphicsPixmapItem {
 
 protected:
     QString name;
-    bool obstacle;
+    bool isObstacle;
 
 public:
-    xBlock(QString blockName);
+    xBlock();
+    xBlock(QString blockName, bool isObs);
 
     void setName (QString nName);
     QString getName();
-
-    void defineIfObstacle(QString blockName);
-    bool isObstacle();
-
-    //virtual exit funcs:
-    virtual int getDestinationLayout() const;
-    virtual int getDestinationX() const;
-    virtual int getDestinationY() const;
+    bool getIsObstacle();
 };
 
 #endif // BLOCK_H

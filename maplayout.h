@@ -4,32 +4,31 @@
 #include "block.h"
 
 #include <QString>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 
 class xMapLayout {
 
-    QString layout[12];
+    QString name;
     int startX;
     int startY;
 
-    int exits[10][5]; //10 exits composed of posX, posY, nLayout, nStartX, nStartY
-    int activeExit;
+    QJsonDocument doc;
+    QJsonObject rootObj;
+    QJsonObject blockObj;
+    QJsonArray blocksArray;
 
 public:
     xMapLayout();
 
-    void clearExits();
-
-    void setLayout(int layoutNumber);
     int getStartX();
     int getStartY();
     void setStartX(int nX);
     void setStartY(int nY);
 
-    bool isAnExitPos(int x, int y);
-    int getExits(int iX, int iY);
-    int getActiveExit();
-
-    QString getBlockName(int x, int y);
+    void loadMap(QString nName);
 };
 
 

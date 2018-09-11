@@ -18,13 +18,10 @@ public:
     explicit xMainWindow(QWidget *parent = nullptr);
     ~xMainWindow();
 
-
-private slots:
-
+    Ui::xMainWindow *ui;
 
 private:
-    Ui::xMainWindow *ui;
-    //xGame *game;
+
 };
 
 #endif // MAINWINDOW_H

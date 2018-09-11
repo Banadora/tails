@@ -5,29 +5,17 @@
 extern xGame *game;
 
 ////////// init
-xBlock::xBlock(QString blockName) :
+xBlock::xBlock()
+{ }
+
+xBlock::xBlock(QString blockName, bool isObs) :
     name(blockName),
-    obstacle(false)
+    isObstacle(isObs)
 {
-    setPixmap(QPixmap(":/img/" + name + ".png"));
-    defineIfObstacle(name);
+    setPixmap(QPixmap(":/img/" + name));
 }
 
 void xBlock::setName(QString nName) { name = nName;}
 QString xBlock::getName() { return name; }
 
-
-////////// when created, define if a certain block is an obstacle
-void xBlock::defineIfObstacle(QString name) {
-    if (name == "grass1") { obstacle = true; }
-}
-
-bool xBlock::isObstacle() { return obstacle; }
-
-
-////////// virtual funcs
-int xBlock::getDestinationLayout() const { return -1; }
-int xBlock::getDestinationX() const { return -1; }
-int xBlock::getDestinationY() const { return -1; }
-
-
+bool xBlock::getIsObstacle() { return isObstacle; }
