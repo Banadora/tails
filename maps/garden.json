@@ -1,9 +1,4 @@
 {
-    "name":"garden",
-    "mapNorth":"plains",
-    "mapEast":"none",
-    "mapSouth":"none",
-    "mapWest":"none",
     "blocks": [
         {
             "name": "grass1.png",
@@ -869,5 +864,10 @@
             "xpos": 256,
             "ypos": 0
         }
-    ]
+    ],
+    "mapEast": "none",
+    "mapNorth": "plains",
+    "mapSouth": "none",
+    "mapWest": "none",
+    "name": "garden"
 }
