@@ -7,8 +7,7 @@
 #include <QGraphicsItem>
 #include <QGraphicsPixmapItem>
 
-class xCharacter : public QGraphicsPixmapItem
-{
+class xCharacter {
 
     xCharacterView view;
 

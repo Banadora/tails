@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "character.h"
+#include "hero.h"
 #include "block.h"
 #include "maplayout.h"
 
@@ -32,7 +32,7 @@ public:
 
     QGraphicsScene *scene;
     xMapLayout *mapLayout;
-    xCharacter *hero;
+    xHero *hero;
     xBlock *block;
     xBlock *activeBlocks[nbBlocksX][nbBlocksY];
 };

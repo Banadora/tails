@@ -21,7 +21,7 @@ xGame::xGame(int viewWidth, int viewHeight): QGraphicsView () {
     mapLayout = new xMapLayout;
 
     //create hero
-    hero = new xCharacter;
+    hero = new xHero;
     hero->setViewPos(mapLayout->getStartX()*PixelsX, mapLayout->getStartY()*PixelsY); //place heroBlock on scene
     hero->getView()->setZValue(10); //set hero view on top of map
     scene->addItem(hero->getView());

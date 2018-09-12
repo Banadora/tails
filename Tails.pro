@@ -30,7 +30,8 @@ SOURCES += \
     block.cpp \
     character.cpp \
     eventfilter.cpp \
-    characterview.cpp
+    characterview.cpp \
+    hero.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -39,7 +40,8 @@ HEADERS += \
     block.h \
     character.h \
     eventfilter.h \
-    characterview.h
+    characterview.h \
+    hero.h
 
 FORMS += \
         mainwindow.ui
