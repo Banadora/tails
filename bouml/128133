@@ -1,6 +1,6 @@
 format 220
 "Tails" // Tails
-  revision 10
+  revision 11
   modified_by 3 "nxa07835.WBI"
   // class settings
   
@@ -999,6 +999,42 @@ ${items}};
     classdiagram 141189 "Character Diagram"
       classdiagramsettings draw_all_relations no member_max_width 0 end
       size A4
+    end
+
+    class 134531 "Enemy"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 128003 "randMove"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 134531 // <generalisation>
+	relation 134531 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 134531 // <generalisation>
+	  b parent class_ref 157701 // Character
+      end
     end
   end
 

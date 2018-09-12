@@ -1,9 +1,13 @@
 window_sizes 1800 910 450 1345 760 104
 
+diagrams
+  active  classdiagram_ref 141189 // Character Diagram
+    1076 608 100 A4 0 0
+end
 show_stereotypes
-selected classdiagram_ref 141189 // Character Diagram
+selected operation_ref 128003 // randMove
 open
   classview_ref 134661 // Tails
-  classdiagram_ref 141189 // Character Diagram
+  class_ref 134531 // Enemy
 end
 end
