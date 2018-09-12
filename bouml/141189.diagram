@@ -1,5 +1,9 @@
 format 220
 
+classcanvas 128003 class_ref 128003 // Hero
+  classdiagramsettings member_max_width 0 end
+  xyz 138 325 2000
+end
 classcanvas 129925 class_ref 150917 // CharacterView
   classdiagramsettings member_max_width 0 end
   xyz 397.72 182.059 2006
@@ -15,6 +19,11 @@ end
 classcanvas 131077 class_ref 157701 // Character
   classdiagramsettings member_max_width 0 end
   xyz 93.32 211.72 2000
+end
+relationcanvas 128131 relation_ref 128003 // <generalisation>
+  from ref 128003 z 2001 to ref 131077
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130693 relation_ref 158725 // <generalisation>
   from ref 129925 z 2007 to ref 130053

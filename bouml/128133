@@ -1,7 +1,7 @@
 format 220
 "Tails" // Tails
-  revision 9
-  modified_by 5 "artsa"
+  revision 10
+  modified_by 3 "nxa07835.WBI"
   // class settings
   
   classdiagramsettings show_members_visibility yes member_max_width 0 end
@@ -53,6 +53,40 @@ format 220
     activitydiagramsettings
      end
     associated_deployment_view deploymentview_ref 141317 // Tails
+    class 128003 "Hero"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128003 // <generalisation>
+	relation 128003 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 128003 // <generalisation>
+	  b parent class_ref 157701 // Character
+      end
+
+      attribute 128003 "healthPoints"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
     class 136453 "QObject"
       visibility package stereotype "typedef" explicit_base_type "QObject"
       cpp_external cpp_decl "${name}
@@ -729,7 +763,6 @@ ${inlines}
 	
 	
       end
-
     end
 
     class 150917 "CharacterView"
