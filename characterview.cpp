@@ -9,7 +9,7 @@
 extern xGame *game;
 
 
-xCharacterView::xCharacterView()
+xCharacterView::xCharacterView(QObject *parent)
 { }
 
 xCharacterView::xCharacterView(QString viewName) :
