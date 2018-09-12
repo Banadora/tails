@@ -1,5 +1,6 @@
 #include "hero.h"
 
 
-xHero::xHero()
+xHero::xHero(QString heroName) :
+    xCharacter(heroName)
 { }

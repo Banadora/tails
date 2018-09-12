@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "hero.h"
+#include "enemy.h"
 #include "block.h"
 #include "maplayout.h"
 
@@ -35,6 +36,7 @@ public:
     xHero *hero;
     xBlock *block;
     xBlock *activeBlocks[nbBlocksX][nbBlocksY];
+    xEnemy *enemy;
 };
 
 #endif // GAME_H

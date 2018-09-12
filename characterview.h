@@ -8,7 +8,7 @@
 class xCharacterView : public QGraphicsPixmapItem {
 
 public:
-    xCharacterView();
+    xCharacterView(QString viewName);
 
     void move(QString direction);
 };

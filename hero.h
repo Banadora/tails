@@ -6,7 +6,7 @@
 class xHero : public xCharacter {
 
 public:
-    xHero();
+    xHero(QString heroName);
 };
 
 #endif // HERO_H

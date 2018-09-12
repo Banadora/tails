@@ -8,9 +8,9 @@
 extern xGame *game;
 
 ////////// get direction from eventfilter and take actions
-xCharacterView::xCharacterView()
+xCharacterView::xCharacterView(QString viewName)
 {
-    setPixmap(QPixmap(":/img/hero.png"));
+    setPixmap(QPixmap(":/img/" + viewName));
 }
 
 void xCharacterView::move(QString direction) {
