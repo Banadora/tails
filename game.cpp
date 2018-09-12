@@ -28,7 +28,7 @@ xGame::xGame(int viewWidth, int viewHeight): QGraphicsView () {
 
     //create enemy
     enemy = new xEnemy("squirrel");
-    enemy->setViewPos(128, 128);
+    enemy->setViewPos(96, 96);
     enemy->getView()->setZValue(9); //set enemy view on top of map
     scene->addItem(enemy->getView());
 }
@@ -45,6 +45,23 @@ void xGame::placeBlock(int xpos, int ypos, QString blockName, bool isObs) {
         if (typeid(*(colliding_items[i])) == typeid(xBlock)) {
             scene->removeItem(colliding_items[i]);
             delete colliding_items[i];
+        }
+    }
+}
+
+// list all characterviews and delete all except hero's one
+void xGame::clearEnemies() {
+    xCharacterView *ev = new xCharacterView();
+
+    QList<QGraphicsItem *> sceneItems = scene->items();
+    for (int i = 0, n = sceneItems.size(); i < n; ++i) {
+        if (typeid(*(sceneItems[i])) == typeid(xCharacterView)) {
+            ev = qgraphicsitem_cast<xCharacterView *>(sceneItems[i]);
+            qDebug() << ev;
+            if (ev->getViewName() != "hero") {
+                scene->removeItem(ev);
+                delete ev;
+            }
         }
     }
 }

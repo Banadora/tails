@@ -1113,7 +1113,7 @@
     ],
     "mapEast": "forest",
     "mapNorth": "none",
-    "mapSouth": "none",
+    "mapSouth": "garden",
     "mapWest": "lake",
     "name": "plains"
 }

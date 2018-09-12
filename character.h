@@ -13,11 +13,11 @@ class xCharacter {
     xCharacterView view;
 
 public:
+    xCharacter();
     xCharacter(QString nName);
 
     void setViewPos(int nX, int nY);
     xCharacterView* getView();
-    void move(QString direction);
 
     void setName(QString nName);
     QString getName();

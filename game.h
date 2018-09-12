@@ -21,7 +21,6 @@
 #define StartingMap "garden"
 
 
-
 class xGame : public QGraphicsView {
 
     Q_OBJECT
@@ -30,6 +29,7 @@ public:
     xGame(int viewWidth, int viewHeight);
 
     void placeBlock(int xpos, int ypos, QString blockName, bool isObs);
+    void clearEnemies();
 
     QGraphicsScene *scene;
     xMapLayout *mapLayout;

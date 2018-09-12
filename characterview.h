@@ -7,10 +7,14 @@
 
 class xCharacterView : public QGraphicsPixmapItem {
 
+    QString name;
+
 public:
+    xCharacterView();
     xCharacterView(QString viewName);
 
-    void move(QString direction);
+    QString getViewName();
+    bool move(QString direction);
 };
 
 #endif // CHARACTERVIEW_H

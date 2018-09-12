@@ -3,10 +3,19 @@
 
 #include "character.h"
 
-class xEnemy : public xCharacter {
+#include <QTimer>
+
+class xEnemy : public QObject, public xCharacter {
+
+    Q_OBJECT
+
+    QTimer *movetimer;
 
 public:
-    xEnemy(QString enemyName);
+    xEnemy(QString enemyName="unknown");
+
+public slots:
+    void randMove();
 };
 
 #endif // ENEMY_H
