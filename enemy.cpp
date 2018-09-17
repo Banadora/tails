@@ -83,14 +83,21 @@ void xEnemy::attack() {
 }
 
 void xEnemy::animation() {
+    //set angle
+    double angle = getDistanceLine().angle() * -1;
+    //animView->setTransformOriginPoint(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2);
+    animView->setTransformOriginPoint(animView->pos().x() + 9.5, animView->pos().x() + 6);
+    animView->setRotation(angle);
+    animView->setTransformOriginPoint(0, 0);
+    //on/off
     if (animToken == 1) {
         animView->setPixmap(QPixmap(":/img/claw0"));
-        animView->setPos(getDistanceLine().center().x()-11, getDistanceLine().center().y()-6);
+        animView->setPos(getView()->pos().x() + PixelsX/2 + getDistanceLine().dx()/3, getView()->pos().y() + PixelsY/2+ getDistanceLine().dy()/3);
         animToken = 0;
     }
     else {
         animView->setPixmap(QPixmap(""));
-        animView->setPos(getDistanceLine().center().x()-11, getDistanceLine().center().y()-6);
+        animView->setPos(getView()->pos().x() + PixelsX/2 + getDistanceLine().dx()/4, getView()->pos().y() + PixelsY/2+ getDistanceLine().dy()/4);
         animToken = 1;
     }
 }
