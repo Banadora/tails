@@ -1,5 +1,6 @@
 #include "maplayout.h"
 #include "game.h"
+#include "enemy.h"
 
 #include <QDebug>
 

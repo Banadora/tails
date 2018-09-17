@@ -7,17 +7,14 @@ extern xGame *game;
 xCharacter::xCharacter()
 { }
 
-void xCharacter::setViewPos(int nX, int nY)
-{
-    view.setPos(nX, nY);
-}
+xCharacter::xCharacter(QString nName) :
+    name(nName),
+    view(nName)
+{ }
 
-xCharacterView* xCharacter::getView()
-{
-    return &view;
-}
+void xCharacter::setViewPos(int nX, int nY) { view.setPos(nX, nY); }
 
-void xCharacter::move(QString direction)
-{
-    view.move(direction);
-}
+xCharacterView* xCharacter::getView() { return &view; }
+
+void xCharacter::setName(QString nName) { name = nName; }
+QString xCharacter::getName() { return name; }

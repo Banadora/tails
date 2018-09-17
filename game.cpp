@@ -21,10 +21,21 @@ xGame::xGame(int viewWidth, int viewHeight): QGraphicsView () {
     mapLayout = new xMapLayout;
 
     //create hero
-    hero = new xHero;
+    hero = new xHero("hero_front");
     hero->setViewPos(mapLayout->getStartX()*PixelsX, mapLayout->getStartY()*PixelsY); //place heroBlock on scene
     hero->getView()->setZValue(10); //set hero view on top of map
     scene->addItem(hero->getView());
+
+    //create enemy
+    enemy = new xEnemy("squirrel");
+    enemy->setViewPos(96, 256);
+    enemy->getView()->setZValue(9); //set enemy view on top of map
+    scene->addItem(enemy->getView());
+
+    enemy = new xEnemy("squirrel");
+    enemy->setViewPos(288, 160);
+    enemy->getView()->setZValue(9); //set enemy view on top of map
+    scene->addItem(enemy->getView());
 }
 
 void xGame::placeBlock(int xpos, int ypos, QString blockName, bool isObs) {
@@ -39,6 +50,23 @@ void xGame::placeBlock(int xpos, int ypos, QString blockName, bool isObs) {
         if (typeid(*(colliding_items[i])) == typeid(xBlock)) {
             scene->removeItem(colliding_items[i]);
             delete colliding_items[i];
+        }
+    }
+}
+
+// list all characterviews and delete all except hero's one
+void xGame::clearEnemies() {
+    xCharacterView *ev = new xCharacterView(); //pointer to enemies' views
+
+    QList<QGraphicsItem *> sceneItems = scene->items();
+    for (int i = 0, n = sceneItems.size(); i < n; ++i) {
+        if (typeid(*(sceneItems[i])) == typeid(xCharacterView)) {
+            ev = qgraphicsitem_cast<xCharacterView *>(sceneItems[i]);
+            qDebug() << ev;
+            if (ev->getViewName() != "hero") { //delete character objects (with associated views)
+                scene->removeItem(ev);
+                delete ev->parentObject();
+            }
         }
     }
 }
