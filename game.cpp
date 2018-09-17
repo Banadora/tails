@@ -63,7 +63,7 @@ void xGame::clearEnemies() {
         if (typeid(*(sceneItems[i])) == typeid(xCharacterView)) {
             ev = qgraphicsitem_cast<xCharacterView *>(sceneItems[i]);
             qDebug() << ev;
-            if (ev->getViewName() != "hero") { //delete character objects (with associated views)
+            if (ev->getViewName().contains("hero") == false) { //delete character objects (with associated views)
                 scene->removeItem(ev);
                 delete ev->parentObject();
             }

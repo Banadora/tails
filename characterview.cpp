@@ -32,7 +32,10 @@ bool xCharacterView::move(QString direction) {
             game->mapLayout->loadMap(game->mapLayout->getNextMap("north"));
             setPos(pos().x(), PixelsY*(nbBlocksY-1));
         }
-        else { setPos(pos().x(), pos().y()-PixelsMove); } //moving
+        else { //moving
+            setPos(pos().x(), pos().y()-PixelsMove);
+            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_back.png")); }
+        }
     }
 
     //key down pressed
@@ -41,7 +44,10 @@ bool xCharacterView::move(QString direction) {
             game->mapLayout->loadMap(game->mapLayout->getNextMap("south"));
             setPos(pos().x(), 0);
         }
-        else { setPos(pos().x(), pos().y()+PixelsMove); } //moving
+        else { //moving
+            setPos(pos().x(), pos().y()+PixelsMove);
+            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_front.png")); }
+        }
     }
 
     //key left pressed
@@ -50,7 +56,10 @@ bool xCharacterView::move(QString direction) {
             game->mapLayout->loadMap(game->mapLayout->getNextMap("west"));
             setPos(PixelsX*(nbBlocksX-1), pos().y());
         }
-        else { setPos(pos().x()-PixelsMove, pos().y()); } //moving
+        else { //moving
+            setPos(pos().x()-PixelsMove, pos().y());
+            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_left.png")); }
+        }
     }
 
     //key right pressed
@@ -59,7 +68,10 @@ bool xCharacterView::move(QString direction) {
             game->mapLayout->loadMap(game->mapLayout->getNextMap("east"));
             setPos(0, pos().y());
         }
-        else { setPos(pos().x()+PixelsMove, pos().y()); } //moving
+        else { //moving
+            setPos(pos().x()+PixelsMove, pos().y());
+            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_right.png")); }
+        }
     }
 
     //check is new pos is on obstacle, if true get back to old pos
