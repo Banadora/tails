@@ -1,12 +1,13 @@
 #include "hero.h"
 #include "game.h"
 
+#include <QGraphicsPixmapItem>
 
 extern xGame *game;
 
 
-xHero::xHero(QString heroName) :
-    xCharacter(heroName),
+xHero::xHero(QObject *parent, QString heroName) :
+    xCharacter(parent, heroName),
     hp(100)
 { }
 

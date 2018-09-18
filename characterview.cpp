@@ -9,13 +9,19 @@
 extern xGame *game;
 
 
-xCharacterView::xCharacterView(QObject *parent)
+xCharacterView::xCharacterView()
 { }
 
-xCharacterView::xCharacterView(QString viewName) :
-    name(viewName)
+xCharacterView::xCharacterView(QObject *parent, QString viewName) :
+    name(viewName),
+    p(parent)
 {
     setPixmap(QPixmap(":/img/" + viewName));
+}
+
+QObject* xCharacterView::getParent()
+{
+    return p;
 }
 
 QString xCharacterView::getViewName() { return name; }
@@ -28,7 +34,6 @@ bool xCharacterView::move(QString direction) {
     //key up pressed
     if (direction == "north") {
         if (    (pos().y()-PixelsMove < 0)      &&      (pos() == game->hero->getView()->pos())     ) { //changing map
-            game->clearEnemies();
             game->mapLayout->loadMap(game->mapLayout->getNextMap("north"));
             setPos(pos().x(), PixelsY*(nbBlocksY-1));
         }

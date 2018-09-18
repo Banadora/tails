@@ -7,14 +7,13 @@
 #include <QGraphicsItem>
 #include <QGraphicsPixmapItem>
 
-class xCharacter {
+class xCharacter : public QObject {
 
     QString name;
     xCharacterView view;
 
 public:
-    xCharacter();
-    xCharacter(QString nName);
+    xCharacter(QObject *parent=nullptr, QString nName="");
 
     void setViewPos(int nX, int nY);
     xCharacterView* getView();

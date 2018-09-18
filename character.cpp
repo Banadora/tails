@@ -4,12 +4,10 @@
 
 extern xGame *game;
 
-xCharacter::xCharacter()
-{ }
 
-xCharacter::xCharacter(QString nName) :
+xCharacter::xCharacter(QObject *parent, QString nName) :
     name(nName),
-    view(nName)
+    view(this, nName)
 { }
 
 void xCharacter::setViewPos(int nX, int nY) { view.setPos(nX, nY); }

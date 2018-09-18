@@ -9,8 +9,8 @@
 extern xGame *game;
 
 
-xEnemy::xEnemy(QString enemyName) :
-    xCharacter(enemyName)
+xEnemy::xEnemy(QObject *parent, QString enemyName) :
+    xCharacter(parent, enemyName)
 {
     animView = new QGraphicsPixmapItem;
     animView->setZValue(14);

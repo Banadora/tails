@@ -8,10 +8,13 @@
 class xCharacterView : public QGraphicsPixmapItem {
 
     QString name;
+    QObject *p; //parent object
 
 public:
-    xCharacterView(QObject *parent=0);
-    xCharacterView(QString viewName);
+    xCharacterView();
+    xCharacterView(QObject *parent=nullptr, QString viewName="");
+
+    QObject* getParent();
 
     QString getViewName();
     bool move(QString direction);

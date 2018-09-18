@@ -5,10 +5,12 @@
 
 class xHero : public xCharacter {
 
+    Q_OBJECT
+
     int hp;
 
 public:
-    xHero(QString heroName);
+    xHero(QObject *parent=nullptr, QString heroName="heroname");
 
     int getHP();
     void setHP(int nHP);

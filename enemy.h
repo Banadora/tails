@@ -5,7 +5,7 @@
 
 #include <QTimer>
 
-class xEnemy : public QObject, public xCharacter {
+class xEnemy : public xCharacter {
 
     Q_OBJECT
 
@@ -18,7 +18,7 @@ class xEnemy : public QObject, public xCharacter {
     bool animToken = 1;
 
 public:
-    xEnemy(QString enemyName="unknown");
+    xEnemy(QObject *parent=nullptr, QString enemyName="unknown");
 
     QLineF getDistanceLine();
 

@@ -66,6 +66,7 @@ void xMapLayout::setMaps(QString nMapNorth, QString nMapEast, QString nMapSouth,
 }
 
 QString xMapLayout::getNextMap(QString direction) {
+    game->clearEnemies();
     if (direction == "north") {return mapNorth; }
     else if (direction == "east") {return mapEast; }
     else if (direction == "south") {return mapSouth; }
