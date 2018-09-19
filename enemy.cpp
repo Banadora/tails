@@ -10,7 +10,8 @@ extern xGame *game;
 
 
 xEnemy::xEnemy(QObject *parent, QString enemyName) :
-    xCharacter(parent, enemyName)
+    xCharacter(parent, enemyName),
+    hp(100)
 {
     animView = new QGraphicsPixmapItem;
     animView->setZValue(14);
@@ -34,10 +35,17 @@ QLineF xEnemy::getDistanceLine() {
     return ln;
 }
 
+int xEnemy::getHP() { return hp; }
+void xEnemy::setHP(int nHP) { hp = nHP; }
+
+void xEnemy::getDamaged(int dmg) {
+    hp -= dmg;
+}
+
 void xEnemy::randMove() {
     //check distance between enemy and hero then stop moving and switch to attack if hero is close
-    double d = getDistanceLine().length();
-    if (d < 36) {
+    double ln = getDistanceLine().length();
+    if (ln < 36) {
         moveTimer->stop();
 
 
@@ -66,8 +74,8 @@ void xEnemy::randMove() {
 
 void xEnemy::attack() {
     //check distance between enemy and hero then stop attacking and switch to moving if hero is far
-    double d = getDistanceLine().length();
-    if (d > 36) {
+    double ln = getDistanceLine().length();
+    if (ln > 36) {
         attackTimer->stop();
 
         game->scene->removeItem(animView);
@@ -79,7 +87,7 @@ void xEnemy::attack() {
     }
 
     game->hero->getDamaged(2);
-    qDebug() << "pv: " + QString::number(game->hero->getHP());
+    qDebug() << "hero's HP : " + QString::number(game->hero->getHP());
 }
 
 void xEnemy::animation() {

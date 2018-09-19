@@ -17,10 +17,17 @@ class xEnemy : public xCharacter {
 
     bool animToken = 1;
 
+    int hp;
+
 public:
     xEnemy(QObject *parent=nullptr, QString enemyName="unknown");
 
     QLineF getDistanceLine();
+
+    int getHP();
+    void setHP(int nHP);
+
+    void getDamaged(int dmg);
 
 public slots:
     void randMove();

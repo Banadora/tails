@@ -39,7 +39,7 @@ bool xCharacterView::move(QString direction) {
         }
         else { //moving
             setPos(pos().x(), pos().y()-PixelsMove);
-            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_back.png")); }
+            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_back.png")); name = "hero_back"; }
         }
     }
 
@@ -51,7 +51,7 @@ bool xCharacterView::move(QString direction) {
         }
         else { //moving
             setPos(pos().x(), pos().y()+PixelsMove);
-            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_front.png")); }
+            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_front.png")); name = "hero_front"; }
         }
     }
 
@@ -63,7 +63,7 @@ bool xCharacterView::move(QString direction) {
         }
         else { //moving
             setPos(pos().x()-PixelsMove, pos().y());
-            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_left.png")); }
+            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_left.png")); name = "hero_left"; }
         }
     }
 
@@ -75,7 +75,7 @@ bool xCharacterView::move(QString direction) {
         }
         else { //moving
             setPos(pos().x()+PixelsMove, pos().y());
-            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_right.png")); }
+            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_right.png")); name = "hero_right"; }
         }
     }
 

@@ -3,9 +3,14 @@
 
 #include "character.h"
 
+#include <QTimer>
+
 class xHero : public xCharacter {
 
     Q_OBJECT
+
+    QGraphicsPixmapItem *animView;
+    QTimer *stopAnimTimer;
 
     int hp;
 
@@ -16,6 +21,11 @@ public:
     void setHP(int nHP);
 
     void getDamaged(int dmg);
+    void attack();
+    void attackAnim();
+
+public slots:
+    void stopAnim();
 };
 
 #endif // HERO_H

@@ -39,7 +39,7 @@ bool xEventFilter::eventFilter(QObject *obj, QEvent *event)
         case Qt::Key_D:         { game->hero->getView()->move("east"); break; }
         case Qt::Key_Right:     { game->hero->getView()->move("east"); break; }
 
-        case Qt::Key_Space:     { break; }
+        case Qt::Key_Space:     { game->hero->attack(); break; }
 
     }
 
