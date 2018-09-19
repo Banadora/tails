@@ -39,7 +39,11 @@ bool xCharacterView::move(QString direction) {
         }
         else { //moving
             setPos(pos().x(), pos().y()-PixelsMove);
-            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_back.png")); name = "hero_back"; }
+            if (name.contains("hero")) {
+                setPixmap(QPixmap(":/img/hero_back.png"));
+                name = "hero_back";
+                game->hero->getAnimView()->setVisible(false);
+            }
         }
     }
 
@@ -51,7 +55,11 @@ bool xCharacterView::move(QString direction) {
         }
         else { //moving
             setPos(pos().x(), pos().y()+PixelsMove);
-            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_front.png")); name = "hero_front"; }
+            if (name.contains("hero")) {
+                setPixmap(QPixmap(":/img/hero_front.png"));
+                name = "hero_front";
+                game->hero->getAnimView()->setVisible(false);
+            }
         }
     }
 
@@ -63,7 +71,11 @@ bool xCharacterView::move(QString direction) {
         }
         else { //moving
             setPos(pos().x()-PixelsMove, pos().y());
-            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_left.png")); name = "hero_left"; }
+            if (name.contains("hero")) {
+                setPixmap(QPixmap(":/img/hero_left.png"));
+                name = "hero_left";
+                game->hero->getAnimView()->setVisible(false);
+            }
         }
     }
 
@@ -75,7 +87,11 @@ bool xCharacterView::move(QString direction) {
         }
         else { //moving
             setPos(pos().x()+PixelsMove, pos().y());
-            if (name.contains("hero")) { setPixmap(QPixmap(":/img/hero_right.png")); name = "hero_right"; }
+            if (name.contains("hero")) {
+                setPixmap(QPixmap(":/img/hero_right.png"));
+                name = "hero_right";
+                game->hero->getAnimView()->setVisible(false);
+            }
         }
     }
 

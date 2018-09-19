@@ -24,6 +24,8 @@ public:
     void attack();
     void attackAnim();
 
+    QGraphicsPixmapItem *getAnimView();
+
 public slots:
     void stopAnim();
 };

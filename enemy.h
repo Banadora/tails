@@ -29,6 +29,8 @@ public:
 
     void getDamaged(int dmg);
 
+    QGraphicsPixmapItem *getAnimView();
+
 public slots:
     void randMove();
     void attack();

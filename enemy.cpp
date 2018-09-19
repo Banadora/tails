@@ -42,6 +42,8 @@ void xEnemy::getDamaged(int dmg) {
     hp -= dmg;
 }
 
+QGraphicsPixmapItem* xEnemy::getAnimView() { return animView; }
+
 void xEnemy::randMove() {
     //check distance between enemy and hero then stop moving and switch to attack if hero is close
     double ln = getDistanceLine().length();
@@ -86,8 +88,8 @@ void xEnemy::attack() {
         return;
     }
 
-    game->hero->getDamaged(2);
-    qDebug() << "hero's HP : " + QString::number(game->hero->getHP());
+    game->hero->getDamaged(4);
+    qDebug() << "hero's HP : " << game->hero->getHP();
 }
 
 void xEnemy::animation() {

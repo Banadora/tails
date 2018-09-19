@@ -43,13 +43,14 @@ void xHero::attack() {
                 e->getDamaged(50);
                 qDebug() << "enemy's HP : " << e->getHP();
                 //if enemy has no life, delete it
-                if (e->getHP() <= 0) { delete e; }
+                if (e->getHP() <= 0) { delete e->getAnimView(); delete e; }
             }
         }
     }
 }
 
 void xHero::attackAnim() {
+    animView->setVisible(true);
     if (getView()->getViewName().contains("back"))
     {
         animView->setRotation(-90);
@@ -74,6 +75,8 @@ void xHero::attackAnim() {
     game->scene->addItem(animView);
     stopAnimTimer->start(400);
 }
+
+QGraphicsPixmapItem* xHero::getAnimView() { return animView; }
 
 
 void xHero::stopAnim() {
