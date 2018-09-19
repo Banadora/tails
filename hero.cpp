@@ -13,7 +13,7 @@ xHero::xHero(QObject *parent, QString heroName) :
 {
     animView = new QGraphicsPixmapItem;
     animView->setPixmap(QPixmap(":/img/staff0.png"));
-    animView->setZValue(14);
+    animView->setZValue(9);
 
     stopAnimTimer = new QTimer;
     connect(stopAnimTimer, SIGNAL(timeout()), this, SLOT(stopAnim()));
@@ -53,22 +53,22 @@ void xHero::attackAnim() {
     if (getView()->getViewName().contains("back"))
     {
         animView->setRotation(-90);
-        animView->setPos(getView()->pos().x() + PixelsX/2 - 6, getView()->pos().y());
+        animView->setPos(getView()->pos().x() + PixelsX/2 - 6, getView()->pos().y() + PixelsY/2);
     }
     else if (getView()->getViewName().contains("front"))
     {
         animView->setRotation(90);
-        animView->setPos(getView()->pos().x() + PixelsX/2 + 6, getView()->pos().y() + PixelsY);
+        animView->setPos(getView()->pos().x() + PixelsX/2 + 6, getView()->pos().y() + PixelsY/2);
     }
     else if (getView()->getViewName().contains("right"))
     {
         animView->setRotation(0);
-        animView->setPos(getView()->pos().x() + PixelsX, getView()->pos().y() + PixelsY/2 - 6);
+        animView->setPos(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2 - 6);
     }
     else if (getView()->getViewName().contains("left"))
     {
         animView->setRotation(180);
-        animView->setPos(getView()->pos().x(), getView()->pos().y() + PixelsY/2 + 6);
+        animView->setPos(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2 + 6);
     }
 
     game->scene->addItem(animView);

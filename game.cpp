@@ -29,12 +29,12 @@ xGame::xGame(int viewWidth, int viewHeight): QGraphicsView () {
     //create enemy
     enemy = new xEnemy(this, "squirrel");
     enemy->setViewPos(96, 256);
-    enemy->getView()->setZValue(9); //set enemy view on top of map
+    enemy->getView()->setZValue(6); //set enemy view on top of map
     scene->addItem(enemy->getView());
 
     enemy = new xEnemy(this, "squirrel");
     enemy->setViewPos(288, 160);
-    enemy->getView()->setZValue(9); //set enemy view on top of map
+    enemy->getView()->setZValue(6); //set enemy view on top of map
     scene->addItem(enemy->getView());
 }
 

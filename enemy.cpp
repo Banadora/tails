@@ -14,7 +14,7 @@ xEnemy::xEnemy(QObject *parent, QString enemyName) :
     hp(100)
 {
     animView = new QGraphicsPixmapItem;
-    animView->setZValue(14);
+    animView->setZValue(12);
 
     //connect timers
     moveTimer = new QTimer;
