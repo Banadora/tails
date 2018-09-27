@@ -14,14 +14,19 @@ class xHero : public xCharacter {
 
     int hp;
     QString weapon;
+    QString direction;
 
     bool hit;
 
 public:
-    xHero(QObject *parent=nullptr, QString heroName="heroname");
+    xHero(QObject *parent=nullptr, QString heroName="hero", QString nDirection="front", QString nWeapon="staff");
 
     int getHP();
     void setHP(int nHP);
+
+    QString getWeapon();
+
+    void setDirection(QString nDirection);
 
     void getDamaged(int dmg);
     void attack();

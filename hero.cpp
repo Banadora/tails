@@ -8,11 +8,14 @@
 extern xGame *game;
 
 
-xHero::xHero(QObject *parent, QString heroName) :
+xHero::xHero(QObject *parent, QString heroName, QString nDirection, QString nWeapon) :
     xCharacter(parent, heroName),
     hp(100),
-    weapon("staff")
+    weapon(nWeapon),
+    direction(nDirection)
 {
+    getView()->setViewName(heroName + "_" + direction + "_" + weapon);
+
     animView = new QGraphicsPixmapItem;
     animView->setPixmap(QPixmap(":/img/staff0.png"));
     animView->setZValue(9);
@@ -25,22 +28,25 @@ xHero::xHero(QObject *parent, QString heroName) :
 int xHero::getHP() { return hp; }
 void xHero::setHP(int nHP) { hp = nHP; }
 
+QString xHero::getWeapon() { return weapon; }
+
+void xHero::setDirection(QString nDirection) { direction = nDirection; }
+
 void xHero::getDamaged(int dmg) {
     hp -= dmg;
 }
 
 void xHero::attack() {
     //create timeline
-    QTimeLine *timeLine = new QTimeLine(80, this);
+    QTimeLine *timeLine = new QTimeLine(120, this);
     timeLine->setFrameRange(0, 35);
     connect(timeLine, SIGNAL(frameChanged(int)), this, SLOT(attackAnim(int)));
-    //play anim
-    //qDebug() << game->hero->getView()->getViewName();
-    //game->hero->getView()->setViewName();
+    //play anim and change hero's view to no weapon during anim
+    game->hero->getView()->setViewName(game->hero->getName() + "_" + direction + "_" + "none");
     game->scene->addItem(animView);
     hit = false;
     timeLine->start();
-    stopAnimTimer->start(100);
+    stopAnimTimer->start(250);
 }
 
 bool xHero::checkAttack()
@@ -98,6 +104,7 @@ QGraphicsPixmapItem* xHero::getAnimView() { return animView; }
 
 
 void xHero::stopAnim() {
+    game->hero->getView()->setViewName(game->hero->getName() + "_" + direction + "_" + game->hero->getWeapon());
     game->scene->removeItem(animView);
     stopAnimTimer->stop();
 }
