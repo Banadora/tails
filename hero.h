@@ -13,6 +13,7 @@ class xHero : public xCharacter {
     QTimer *stopAnimTimer;
 
     int hp;
+    bool hit;
 
 public:
     xHero(QObject *parent=nullptr, QString heroName="heroname");
@@ -22,11 +23,12 @@ public:
 
     void getDamaged(int dmg);
     void attack();
-    void attackAnim();
+    bool checkAttack();
 
     QGraphicsPixmapItem *getAnimView();
 
 public slots:
+    void attackAnim(int frame);
     void stopAnim();
 };
 

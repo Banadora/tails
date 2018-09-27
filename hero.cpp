@@ -2,6 +2,7 @@
 #include "game.h"
 
 #include <QGraphicsPixmapItem>
+#include <QTimeLine>
 #include <QDebug>
 
 extern xGame *game;
@@ -12,8 +13,6 @@ xHero::xHero(QObject *parent, QString heroName) :
     hp(100)
 {
     animView = new QGraphicsPixmapItem;
-    animView->setPixmap(QPixmap(":/img/staff0.png"));
-    animView->setZValue(9);
 
     stopAnimTimer = new QTimer;
     connect(stopAnimTimer, SIGNAL(timeout()), this, SLOT(stopAnim()));
@@ -27,10 +26,19 @@ void xHero::getDamaged(int dmg) {
 }
 
 void xHero::attack() {
+    //create timeline
+    QTimeLine *timeLine = new QTimeLine(80, this);
+    timeLine->setFrameRange(0, 35);
+    connect(timeLine, SIGNAL(frameChanged(int)), this, SLOT(attackAnim(int)));
     //play anim
-    attackAnim();
+    hit = false;
+    timeLine->start();
+    stopAnimTimer->start(100);
+}
 
-    //check if anim collides with an enemy
+bool xHero::checkAttack()
+{
+    //check if anim collides with an enemy, return true if enemy took a shot
     xCharacterView *ev = new xCharacterView(nullptr, ""); //pointer to enemies' views
 
     QList<QGraphicsItem *> colliding_items = animView->collidingItems();
@@ -44,36 +52,47 @@ void xHero::attack() {
                 qDebug() << "enemy's HP : " << e->getHP();
                 //if enemy has no life, delete it
                 if (e->getHP() <= 0) { delete e->getAnimView(); delete e; }
+                return true;
             }
         }
     }
+
+    return false;
 }
 
-void xHero::attackAnim() {
+void xHero::attackAnim(int frame) {
+    //delete old anim, make new anim
+    delete animView;
+    animView = new QGraphicsPixmapItem;
+    animView->setPixmap(QPixmap(":/img/staff0.png"));
+    animView->setZValue(9);
+
+
     animView->setVisible(true);
     if (getView()->getViewName().contains("back"))
     {
-        animView->setRotation(-90);
+        animView->setRotation(-115 + frame); //-90 (-115 to -80)
         animView->setPos(getView()->pos().x() + PixelsX/2 - 6, getView()->pos().y() + PixelsY/2);
     }
     else if (getView()->getViewName().contains("front"))
     {
-        animView->setRotation(90);
+        animView->setRotation(65 + frame);//90 (65 to 100)
         animView->setPos(getView()->pos().x() + PixelsX/2 + 6, getView()->pos().y() + PixelsY/2);
     }
     else if (getView()->getViewName().contains("right"))
     {
-        animView->setRotation(0);
+        animView->setRotation(-25 + frame); //0 (-25 to 10)
         animView->setPos(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2 - 6);
     }
     else if (getView()->getViewName().contains("left"))
     {
-        animView->setRotation(180);
+        animView->setRotation(155 + frame); //180 (155 to 190)
         animView->setPos(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2 + 6);
     }
 
+    //add anim to scene then check if hitting an enemy, if already hitted during animation, don't check anymore
     game->scene->addItem(animView);
-    stopAnimTimer->start(400);
+    if (hit == false) { hit = checkAttack(); }
 }
 
 QGraphicsPixmapItem* xHero::getAnimView() { return animView; }
