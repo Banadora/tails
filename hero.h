@@ -13,6 +13,8 @@ class xHero : public xCharacter {
     QTimer *stopAnimTimer;
 
     int hp;
+    QString weapon;
+
     bool hit;
 
 public:

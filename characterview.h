@@ -17,6 +17,7 @@ public:
     QObject* getParent();
 
     QString getViewName();
+    void setViewName(QString nName);
     bool move(QString direction);
 };
 

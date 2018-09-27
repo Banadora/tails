@@ -26,6 +26,12 @@ QObject* xCharacterView::getParent()
 
 QString xCharacterView::getViewName() { return name; }
 
+void xCharacterView::setViewName(QString nName)
+{
+    name = nName;
+    setPixmap(QPixmap(":/img/" + name + ".png"));
+}
+
 //move char on scene, return true if OK, false if the char didn't move (eg:obstacle)
 bool xCharacterView::move(QString direction) {
 
@@ -40,8 +46,7 @@ bool xCharacterView::move(QString direction) {
         else { //moving
             setPos(pos().x(), pos().y()-PixelsMove);
             if (name.contains("hero")) {
-                setPixmap(QPixmap(":/img/hero_back.png"));
-                name = "hero_back";
+                setViewName("hero_back_staff");
                 game->hero->getAnimView()->setVisible(false);
             }
         }
@@ -56,8 +61,7 @@ bool xCharacterView::move(QString direction) {
         else { //moving
             setPos(pos().x(), pos().y()+PixelsMove);
             if (name.contains("hero")) {
-                setPixmap(QPixmap(":/img/hero_front.png"));
-                name = "hero_front";
+                setViewName("hero_front_staff");
                 game->hero->getAnimView()->setVisible(false);
             }
         }
@@ -72,8 +76,7 @@ bool xCharacterView::move(QString direction) {
         else { //moving
             setPos(pos().x()-PixelsMove, pos().y());
             if (name.contains("hero")) {
-                setPixmap(QPixmap(":/img/hero_left.png"));
-                name = "hero_left";
+                setViewName("hero_left_staff");
                 game->hero->getAnimView()->setVisible(false);
             }
         }
@@ -88,8 +91,7 @@ bool xCharacterView::move(QString direction) {
         else { //moving
             setPos(pos().x()+PixelsMove, pos().y());
             if (name.contains("hero")) {
-                setPixmap(QPixmap(":/img/hero_right.png"));
-                name = "hero_right";
+                setViewName("hero_right_staff");
                 game->hero->getAnimView()->setVisible(false);
             }
         }

@@ -10,9 +10,13 @@ extern xGame *game;
 
 xHero::xHero(QObject *parent, QString heroName) :
     xCharacter(parent, heroName),
-    hp(100)
+    hp(100),
+    weapon("staff")
 {
     animView = new QGraphicsPixmapItem;
+    animView->setPixmap(QPixmap(":/img/staff0.png"));
+    animView->setZValue(9);
+    animView->setVisible(false);
 
     stopAnimTimer = new QTimer;
     connect(stopAnimTimer, SIGNAL(timeout()), this, SLOT(stopAnim()));
@@ -31,6 +35,9 @@ void xHero::attack() {
     timeLine->setFrameRange(0, 35);
     connect(timeLine, SIGNAL(frameChanged(int)), this, SLOT(attackAnim(int)));
     //play anim
+    //qDebug() << game->hero->getView()->getViewName();
+    //game->hero->getView()->setViewName();
+    game->scene->addItem(animView);
     hit = false;
     timeLine->start();
     stopAnimTimer->start(100);
@@ -56,19 +63,11 @@ bool xHero::checkAttack()
             }
         }
     }
-
     return false;
 }
 
 void xHero::attackAnim(int frame) {
-    //delete old anim, make new anim
-    delete animView;
-    animView = new QGraphicsPixmapItem;
-    animView->setPixmap(QPixmap(":/img/staff0.png"));
-    animView->setZValue(9);
-
-
-    animView->setVisible(true);
+    animView->setVisible(false);
     if (getView()->getViewName().contains("back"))
     {
         animView->setRotation(-115 + frame); //-90 (-115 to -80)
@@ -91,7 +90,7 @@ void xHero::attackAnim(int frame) {
     }
 
     //add anim to scene then check if hitting an enemy, if already hitted during animation, don't check anymore
-    game->scene->addItem(animView);
+    animView->setVisible(true);
     if (hit == false) { hit = checkAttack(); }
 }
 
