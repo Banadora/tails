@@ -67,21 +67,9 @@
             "ypos": 320
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 192,
-            "ypos": 352
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 192,
-            "ypos": 352
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 160,
             "ypos": 352
         },
         {
@@ -91,21 +79,9 @@
             "ypos": 352
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 128,
-            "ypos": 352
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 128,
-            "ypos": 352
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 96,
             "ypos": 352
         },
         {
@@ -115,21 +91,9 @@
             "ypos": 352
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 64,
-            "ypos": 352
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 64,
-            "ypos": 352
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 32,
             "ypos": 352
         },
         {
@@ -139,22 +103,10 @@
             "ypos": 352
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 0,
-            "ypos": 352
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 0,
             "ypos": 352
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 0,
-            "ypos": 320
         },
         {
             "name": "grass1.png",
@@ -163,22 +115,10 @@
             "ypos": 320
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 0,
-            "ypos": 288
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 0,
             "ypos": 288
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 0,
-            "ypos": 256
         },
         {
             "name": "grass1.png",
@@ -187,22 +127,10 @@
             "ypos": 256
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 0,
-            "ypos": 224
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 0,
             "ypos": 224
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 0,
-            "ypos": 192
         },
         {
             "name": "grass1.png",
@@ -211,22 +139,10 @@
             "ypos": 192
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 0,
-            "ypos": 160
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 0,
             "ypos": 160
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 0,
-            "ypos": 128
         },
         {
             "name": "grass1.png",
@@ -235,22 +151,10 @@
             "ypos": 128
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 0,
-            "ypos": 96
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 0,
             "ypos": 96
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 0,
-            "ypos": 32
         },
         {
             "name": "grass1.png",
@@ -259,21 +163,9 @@
             "ypos": 32
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 0,
-            "ypos": 0
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 0,
-            "ypos": 0
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 32,
             "ypos": 0
         },
         {
@@ -283,21 +175,9 @@
             "ypos": 0
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 64,
-            "ypos": 0
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 64,
-            "ypos": 0
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 96,
             "ypos": 0
         },
         {
@@ -307,21 +187,9 @@
             "ypos": 0
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 128,
-            "ypos": 0
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 128,
-            "ypos": 0
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 160,
             "ypos": 0
         },
         {
@@ -331,21 +199,9 @@
             "ypos": 0
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 192,
-            "ypos": 0
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 192,
-            "ypos": 0
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 224,
             "ypos": 0
         },
         {
@@ -355,21 +211,9 @@
             "ypos": 0
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 256,
-            "ypos": 0
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 256,
-            "ypos": 0
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 288,
             "ypos": 0
         },
         {
@@ -379,21 +223,9 @@
             "ypos": 0
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 320,
-            "ypos": 0
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 320,
-            "ypos": 0
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 352,
             "ypos": 0
         },
         {
@@ -401,12 +233,6 @@
             "obstacle": true,
             "xpos": 352,
             "ypos": 0
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 352,
-            "ypos": 32
         },
         {
             "name": "grass1.png",
@@ -415,22 +241,10 @@
             "ypos": 32
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 352,
-            "ypos": 64
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 352,
             "ypos": 64
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 352,
-            "ypos": 96
         },
         {
             "name": "grass1.png",
@@ -439,22 +253,10 @@
             "ypos": 96
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 352,
-            "ypos": 128
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 352,
             "ypos": 128
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 352,
-            "ypos": 160
         },
         {
             "name": "grass1.png",
@@ -463,22 +265,10 @@
             "ypos": 160
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 352,
-            "ypos": 224
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 352,
             "ypos": 224
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 352,
-            "ypos": 256
         },
         {
             "name": "grass1.png",
@@ -487,22 +277,10 @@
             "ypos": 256
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 352,
-            "ypos": 288
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 352,
             "ypos": 288
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 352,
-            "ypos": 320
         },
         {
             "name": "grass1.png",
@@ -511,21 +289,9 @@
             "ypos": 320
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 352,
-            "ypos": 352
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 352,
-            "ypos": 352
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 320,
             "ypos": 352
         },
         {
@@ -535,21 +301,9 @@
             "ypos": 352
         },
         {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 288,
-            "ypos": 352
-        },
-        {
             "name": "grass1.png",
             "obstacle": true,
             "xpos": 288,
-            "ypos": 352
-        },
-        {
-            "name": "redfilter",
-            "obstacle": false,
-            "xpos": 256,
             "ypos": 352
         },
         {
@@ -1109,6 +863,15 @@
             "obstacle": false,
             "xpos": 32,
             "ypos": 32
+        }
+    ],
+    "enemies": [
+        {
+            "dmg": 4,
+            "hp": 100,
+            "name": "squirrel.png",
+            "xpos": 160,
+            "ypos": 160
         }
     ],
     "mapEast": "forest",
