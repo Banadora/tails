@@ -29,6 +29,8 @@ public:
     xGame(int viewWidth, int viewHeight);
 
     void placeBlock(int xpos, int ypos, QString blockName, bool isObs);
+    void placeEnemy(int xpos, int ypos, QString name, int hp, int dmg);
+
     void clearEnemies();
 
     QGraphicsScene *scene;

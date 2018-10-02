@@ -31,12 +31,30 @@ void xGame::placeBlock(int xpos, int ypos, QString blockName, bool isObs) {
     //place new block
     block = new xBlock(blockName, isObs);
     block->setPos(xpos, ypos);
+    block->setZValue(1);
     scene->addItem(block);
 
     //remove old block
     QList<QGraphicsItem *> colliding_items = block->collidingItems();
     for (int i = 0, n = colliding_items.size(); i < n; ++i) {
         if (typeid(*(colliding_items[i])) == typeid(xBlock)) {
+            scene->removeItem(colliding_items[i]);
+            delete colliding_items[i];
+        }
+    }
+}
+
+void xGame::placeEnemy(int xpos, int ypos, QString name, int hp, int dmg) {
+    //place new enemy
+    enemy = new xEnemy(this, name, hp, dmg);
+    enemy->getView()->setPos(xpos, ypos);
+    enemy->getView()->setZValue(3);
+    scene->addItem(enemy->getView());
+
+    //remove old enemy
+    QList<QGraphicsItem *> colliding_items = enemy->getView()->collidingItems();
+    for (int i = 0, n = colliding_items.size(); i < n; ++i) {
+        if (typeid(*(colliding_items[i])) == typeid(xCharacterView)) {
             scene->removeItem(colliding_items[i]);
             delete colliding_items[i];
         }

@@ -22,8 +22,12 @@ class xMapLayout {
 
     QJsonDocument doc;
     QJsonObject rootObj;
+
     QJsonObject blockObj;
     QJsonArray blocksArray;
+
+    QJsonObject enemyObj;
+    QJsonArray enemyArray;
 
 public:
     xMapLayout();

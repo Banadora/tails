@@ -31,10 +31,10 @@ void xMapLayout::loadMap(QString nName) {
 
     //rootMap = root json object
     QVariantMap rootMap = rootObj.toVariantMap();
+
+    // BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS
     //blocksArray is an array of objects and is located directly in root, it's erased before use
-    while(blocksArray.count()) {
-         blocksArray.pop_back();
-     }
+    while(blocksArray.count()) { blocksArray.pop_back(); }
     blocksArray = rootObj["blocks"].toArray();
 
     //jBlock is an object inside the blockArray
@@ -45,12 +45,26 @@ void xMapLayout::loadMap(QString nName) {
         jBlockMap = jBlock.toVariantMap();
         game->placeBlock(jBlockMap["xpos"].toInt(), jBlockMap["ypos"].toInt(), jBlockMap["name"].toString(), jBlockMap["obstacle"].toBool());
     }
-    name = rootMap["name"].toString();
-    qDebug() << "~~~~ Map loaded ~~~~" << '\n' << name;
+
+    // ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES
+    //enemyArray is an array of objects and is located directly in root, it's erased before use
+    while(enemyArray.count()) { enemyArray.pop_back(); }
+    enemyArray = rootObj["enemies"].toArray();
+
+    QJsonObject jEnemy;
+    QVariantMap jEnemyMap;
+    for (int i = 0, n = enemyArray.size(); i < n; i++) {
+        jEnemy = enemyArray[i].toObject();
+        jEnemyMap = jEnemy.toVariantMap();
+        game->placeEnemy(jEnemyMap["xpos"].toInt(), jEnemyMap["ypos"].toInt(), jEnemyMap["name"].toString(), jEnemyMap["hp"].toInt(), jEnemyMap["dmg"].toInt());
+    }
 
     //set surrounding maps
     setMaps(rootMap["mapNorth"].toString(), rootMap["mapEast"].toString(), rootMap["mapSouth"].toString(), rootMap["mapWest"].toString());
     qDebug() << mapNorth << mapEast << mapSouth << mapWest;
+
+    name = rootMap["name"].toString();
+    qDebug() << "~~~~ Map loaded ~~~~" << '\n' << name;
 }
 
 int xMapLayout::getStartX() { return startX; }
