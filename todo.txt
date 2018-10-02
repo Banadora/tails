@@ -1,0 +1,9 @@
+~~~~~   To do list   ~~~~~
+
+:: bug on enemies hp/dmg
+
+:: save current map when leaving a map, load this map instead of fresh one
+
+:: red enemy when hit
+
+:: die at 0hp
