@@ -89,7 +89,7 @@ void xEnemy::attack() {
         return;
     }
 
-    game->hero->getDamaged(4);
+    game->hero->getDamaged(dmg);
     qDebug() << "hero's HP : " << game->hero->getHP();
 }
 
