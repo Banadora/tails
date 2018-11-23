@@ -32,7 +32,8 @@ SOURCES += \
     eventfilter.cpp \
     characterview.cpp \
     hero.cpp \
-    enemy.cpp
+    enemy.cpp \
+    animation.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,7 +44,8 @@ HEADERS += \
     eventfilter.h \
     characterview.h \
     hero.h \
-    enemy.h
+    enemy.h \
+    animation.h
 
 FORMS += \
         mainwindow.ui

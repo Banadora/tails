@@ -48,7 +48,6 @@ bool xCharacterView::move(QString direction) {
             if (name.contains("hero")) {
                 game->hero->setDirection("back");
                 setViewName("hero_back_" + game->hero->getWeapon());
-                game->hero->getAnimView()->setVisible(false);
             }
         }
     }
@@ -64,7 +63,6 @@ bool xCharacterView::move(QString direction) {
             if (name.contains("hero")) {
                 game->hero->setDirection("front");
                 setViewName("hero_front_" + game->hero->getWeapon());
-                game->hero->getAnimView()->setVisible(false);
             }
         }
     }
@@ -80,7 +78,6 @@ bool xCharacterView::move(QString direction) {
             if (name.contains("hero")) {
                 game->hero->setDirection("left");
                 setViewName("hero_left_" + game->hero->getWeapon());
-                game->hero->getAnimView()->setVisible(false);
             }
         }
     }
@@ -96,7 +93,6 @@ bool xCharacterView::move(QString direction) {
             if (name.contains("hero")) {
                 game->hero->setDirection("right");
                 setViewName("hero_right_" + game->hero->getWeapon());
-                game->hero->getAnimView()->setVisible(false);
             }
         }
     }

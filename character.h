@@ -10,6 +10,7 @@
 class xCharacter : public QObject {
 
     QString name;
+
     xCharacterView view;
 
 public:
@@ -17,6 +18,7 @@ public:
 
     void setViewPos(int nX, int nY);
     xCharacterView* getView();
+    bool moveView (QString direction);
 
     void setName(QString nName);
     QString getName();
