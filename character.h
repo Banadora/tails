@@ -13,6 +13,8 @@ class xCharacter : public QObject {
 
     xCharacterView view;
 
+    bool isAttacking;
+
 public:
     xCharacter(QObject *parent=nullptr, QString nName="");
 
@@ -22,6 +24,9 @@ public:
 
     void setName(QString nName);
     QString getName();
+
+    void setIsAttacking(bool nIsAttacking);
+    bool getIsAttacking();
 };
 
 #endif // CHARACTER_H

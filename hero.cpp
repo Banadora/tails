@@ -15,8 +15,6 @@ xHero::xHero(QObject *parent, QString heroName, QString nDirection, QString nWea
     direction(nDirection)
 {
     getView()->setViewName(heroName + "_" + direction + "_" + weapon);
-
-
 }
 
 int xHero::getHP() { return hp; }
@@ -27,20 +25,14 @@ QString xHero::getDirection() { return direction; }
 
 QString xHero::getWeapon() { return weapon; }
 
-void xHero::getDamaged(int dmg) {
-    hp -= dmg;
-}
+void xHero::getDamaged(int dmg) { hp -= dmg; }
 
 void xHero::attack() {
-    //play anim and change hero's view to no weapon during anim
-    anim = new xAnimation("staff", 0, 35);
+    //create & play new anim + change hero's view to no weapon during anim
+    anim = new xAnimation("staff", "attack", 120, 0, 35);
     getView()->setViewName(getName() + "_" + direction + "_" + "none");
     game->scene->addItem(anim->getAnimView());
-    hit = false;
     anim->startAnim();
-
-    //add anim to scene then check if hitting an enemy, if already hitted during animation, don't check anymore
-    if (hit == false) { hit = checkAttack(); }
 }
 
 bool xHero::checkAttack()
@@ -48,7 +40,7 @@ bool xHero::checkAttack()
     //check if anim collides with an enemy, return true if enemy took a shot
     xCharacterView *ev = new xCharacterView(nullptr, ""); //pointer to enemies' views
 
-    QList<QGraphicsItem *> colliding_items = anim->collidingItems();
+    QList<QGraphicsItem *> colliding_items = anim->getAnimView()->collidingItems();
     for (int i = 0, n = colliding_items.size(); i < n; ++i) {
         if (typeid(*(colliding_items[i])) == typeid(xCharacterView)) {
             ev = qgraphicsitem_cast<xCharacterView *>(colliding_items[i]);

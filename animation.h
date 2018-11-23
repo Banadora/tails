@@ -13,24 +13,23 @@ class xAnimation : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
 
     QString name;
+    QString type;
+
+    bool hit;
 
     QGraphicsPixmapItem animView;
 
-    QTimeLine *timeLine = new QTimeLine(120, this);
+    QTimeLine *timeLine;
+    int timespan;
     int startFrame;
     int stopFrame;
 
     QTimer *stopAnimTimer;
 
 public:
-    xAnimation(QString nName, int nStartFrame, int nStopFrame);
-
-    void setName (QString nName);
-    QString getName();
+    xAnimation(QString nName, QString nType, int nTimespan, int nStartFrame, int nStopFrame);
 
     QGraphicsPixmapItem *getAnimView();
-
-    QTimeLine *getTimeLine();
 
     void startAnim();
 
