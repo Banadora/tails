@@ -13,12 +13,12 @@
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
 
-#define nbBlocksX 12
-#define nbBlocksY 12
+#define nbBlocksX 12    //number of X-axis blocks in the view
+#define nbBlocksY 12    //number of Y-axis blocks in the view
 #define PixelsX 32      //blocks width in pixels
 #define PixelsY 32      //blocks height in pixels
 #define PixelsMove 16   //move distance in pixels
-#define StartingMap "garden"
+#define StartingMap "garden" //name.json will be opened at start
 
 
 class xGame : public QGraphicsView {
@@ -29,7 +29,7 @@ public:
     xGame(int viewWidth, int viewHeight);
 
     void placeBlock(int xpos, int ypos, QString blockName, bool isObs);
-    void placeEnemy(int xpos, int ypos, QString name, int hp, int dmg);
+    void placeEnemy(int xpos, int ypos, QString name, int hp, QString weapon);
 
     void clearEnemies();
 

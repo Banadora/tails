@@ -14,7 +14,7 @@ xAnimation::xAnimation(QString nName, QString nType, int nTimespan, int nStartFr
     timeLine = new QTimeLine(timespan, this);
     timeLine->setFrameRange(startFrame, stopFrame);
 
-    animView.setPixmap(QPixmap(":/img/anim_" + name + ".png"));
+    animView.setPixmap(QPixmap(":/anim/" + name + ".png"));
     animView.setZValue(9);
     animView.setVisible(false);
 
@@ -38,21 +38,25 @@ void xAnimation::attackAnim(int frame) {
     {
         animView.setRotation(-115 + frame); //-90 (-115 to -80)
         animView.setPos(game->hero->getView()->pos().x() + PixelsX/2 - 6, game->hero->getView()->pos().y() + PixelsY/2);
+        game->hero->getView()->setViewName("hero_back_" + game->hero->getWeapon()->getName());
     }
     else if (game->hero->getDirection() == "front")
     {
         animView.setRotation(65 + frame);//90 (65 to 100)
         animView.setPos(game->hero->getView()->pos().x() + PixelsX/2 + 6, game->hero->getView()->pos().y() + PixelsY/2);
+        game->hero->getView()->setViewName("hero_front_" + game->hero->getWeapon()->getName());
     }
     else if (game->hero->getDirection() == "right")
     {
         animView.setRotation(-25 + frame); //0 (-25 to 10)
         animView.setPos(game->hero->getView()->pos().x() + PixelsX/2, game->hero->getView()->pos().y() + PixelsY/2 - 6);
+        game->hero->getView()->setViewName("hero_right_" + game->hero->getWeapon()->getName());
     }
     else if (game->hero->getDirection() == "left")
     {
         animView.setRotation(155 + frame); //180 (155 to 190)
         animView.setPos(game->hero->getView()->pos().x() + PixelsX/2, game->hero->getView()->pos().y() + PixelsY/2 + 6);
+        game->hero->getView()->setViewName("hero_left_" + game->hero->getWeapon()->getName());
     }
 
     //check if anim is hitting an enemy, if already hit during animation, don't check anymore

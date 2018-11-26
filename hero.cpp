@@ -12,7 +12,7 @@ xHero::xHero(QObject *parent, QString heroName, int nHP, QString nDirection, QSt
     xCharacter(parent, heroName, nHP, nWeapon),
     direction(nDirection)
 {
-    getWeapon()->changeWeapon(nWeapon);
+    getWeapon()->changeWeapon(nWeapon); //equip a weapon
     getView()->setViewName(heroName + "_" + direction + "_" + getWeapon()->getName());
 }
 
@@ -21,7 +21,7 @@ QString xHero::getDirection() { return direction; }
 
 void xHero::attack() {
     //create & play new anim + change hero's view to no weapon during anim
-    anim = new xAnimation(getWeapon()->getName(), "attack", 120, 0, 35);
+    anim = new xAnimation(getWeapon()->getName(), "attack", 150, 0, 35);
     getView()->setViewName(getName() + "_" + direction + "_" + "none");
     game->scene->addItem(anim->getAnimView());
     anim->startAnim();

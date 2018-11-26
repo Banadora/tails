@@ -9,10 +9,11 @@
 extern xGame *game;
 
 
-xEnemy::xEnemy(QObject *parent, QString enemyName, int nHP, int nDmg) :
-    xCharacter(parent, enemyName, nHP),
-    dmg(nDmg)
+xEnemy::xEnemy(QObject *parent, QString enemyName, int nHP, QString nWeapon) :
+    xCharacter(parent, enemyName, nHP, nWeapon)
 {
+    getWeapon()->changeWeapon(nWeapon); //equip a weapon
+
     animView = new QGraphicsPixmapItem;
     animView->setZValue(12);
 
@@ -82,7 +83,7 @@ void xEnemy::attack() {
         return;
     }
 
-    game->hero->takeDmg(dmg);
+    game->hero->takeDmg(getWeapon()->getDmg());
     qDebug() << "hero's HP : " << game->hero->getHP();
 }
 
@@ -95,7 +96,7 @@ void xEnemy::animation() {
     animView->setTransformOriginPoint(0, 0);
     //on/off
     if (animToken == 1) {
-        animView->setPixmap(QPixmap(":/img/claw0"));
+        animView->setPixmap(QPixmap(":/anim/claws.png"));
         animView->setPos(getView()->pos().x() + PixelsX/2 + getDistanceLine().dx()/3, getView()->pos().y() + PixelsY/2+ getDistanceLine().dy()/3);
         animToken = 0;
     }

@@ -25,7 +25,6 @@
         <file>img/water8.png</file>
         <file>img/water9.png</file>
         <file>img/squirrel.png</file>
-        <file>img/claw0.png</file>
         <file>img/hero_back_staff.png</file>
         <file>img/hero_front_staff.png</file>
         <file>img/hero_left_staff.png</file>
@@ -34,6 +33,7 @@
         <file>img/hero_front_none.png</file>
         <file>img/hero_left_none.png</file>
         <file>img/hero_right_none.png</file>
-        <file>img/anim_staff.png</file>
+        <file>anim/claws.png</file>
+        <file>anim/staff.png</file>
     </qresource>
 </RCC>

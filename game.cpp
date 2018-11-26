@@ -44,9 +44,9 @@ void xGame::placeBlock(int xpos, int ypos, QString blockName, bool isObs) {
     }
 }
 
-void xGame::placeEnemy(int xpos, int ypos, QString name, int hp, int dmg) {
+void xGame::placeEnemy(int xpos, int ypos, QString name, int hp, QString weapon) {
     //place new enemy
-    enemy = new xEnemy(this, name, hp, dmg);
+    enemy = new xEnemy(this, name, hp, weapon);
     enemy->getView()->setPos(xpos, ypos);
     enemy->getView()->setZValue(3);
     scene->addItem(enemy->getView());

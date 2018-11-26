@@ -56,7 +56,7 @@ void xMapLayout::loadMap(QString nName) {
     for (int i = 0, n = enemyArray.size(); i < n; i++) {
         jEnemy = enemyArray[i].toObject();
         jEnemyMap = jEnemy.toVariantMap();
-        game->placeEnemy(jEnemyMap["xpos"].toInt(), jEnemyMap["ypos"].toInt(), jEnemyMap["name"].toString(), jEnemyMap["hp"].toInt(), jEnemyMap["dmg"].toInt());
+        game->placeEnemy(jEnemyMap["xpos"].toInt(), jEnemyMap["ypos"].toInt(), jEnemyMap["name"].toString(), jEnemyMap["hp"].toInt(), jEnemyMap["weapon"].toString());
     }
 
     //set surrounding maps

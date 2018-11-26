@@ -17,10 +17,8 @@ class xEnemy : public xCharacter {
 
     bool animToken = 1;
 
-    int dmg;
-
 public:
-    xEnemy(QObject *parent=nullptr, QString enemyName="unknown", int nHP=100, int nDmg=4);
+    xEnemy(QObject *parent=nullptr, QString enemyName="unknown", int nHP=100, QString nWeapon="none");
 
     QLineF getDistanceLine();
 

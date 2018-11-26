@@ -867,7 +867,7 @@
     ],
     "enemies": [
         {
-            "dmg": 4,
+            "weapon": "claws",
             "hp": 100,
             "name": "squirrel.png",
             "xpos": 160,

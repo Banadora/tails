@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 
-
+//damage done by weapons
 #define STAFF_DMG 55
 #define CLAWS_DMG 5
 
@@ -18,6 +18,8 @@ public:
     xWeapon(QString nName);
 
     QString getName();
+
+    int getDmg();
 
     void changeWeapon(QString nName);
 
