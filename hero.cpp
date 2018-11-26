@@ -8,24 +8,15 @@
 extern xGame *game;
 
 
-xHero::xHero(QObject *parent, QString heroName, QString nDirection, QString nWeapon) :
-    xCharacter(parent, heroName),
-    hp(100),
-    weapon(nWeapon),
+xHero::xHero(QObject *parent, QString heroName, int nHP, QString nDirection, QString nWeapon) :
+    xCharacter(parent, heroName, nHP, nWeapon),
     direction(nDirection)
 {
-    getView()->setViewName(heroName + "_" + direction + "_" + weapon);
+    getView()->setViewName(heroName + "_" + direction + "_" + nWeapon);
 }
-
-int xHero::getHP() { return hp; }
-void xHero::setHP(int nHP) { hp = nHP; }
 
 void xHero::setDirection(QString nDirection) { direction = nDirection; }
 QString xHero::getDirection() { return direction; }
-
-QString xHero::getWeapon() { return weapon; }
-
-void xHero::getDamaged(int dmg) { hp -= dmg; }
 
 void xHero::attack() {
     //create & play new anim + change hero's view to no weapon during anim
@@ -47,7 +38,7 @@ bool xHero::checkAttack()
             //qDebug() << ev->getViewName() << ev->getParent();
             if (ev->getViewName().contains("hero") == false) { //delete character objects (with associated views)
                 xEnemy *e = dynamic_cast<xEnemy *>(ev->getParent());
-                e->getDamaged(50);
+                e->takeDmg(50);
                 qDebug() << "enemy's HP : " << e->getHP();
                 //if enemy has no life, delete it
                 if (e->getHP() <= 0) { delete e->getAnimView(); delete e; }

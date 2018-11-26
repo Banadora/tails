@@ -10,13 +10,15 @@
 class xCharacter : public QObject {
 
     QString name;
+    int hp;
+    QString weapon;
 
     xCharacterView view;
 
     bool isAttacking;
 
 public:
-    xCharacter(QObject *parent=nullptr, QString nName="");
+    xCharacter(QObject *parent=nullptr, QString nName="", int nHP=100, QString nWeapon="none");
 
     void setViewPos(int nX, int nY);
     xCharacterView* getView();
@@ -24,6 +26,14 @@ public:
 
     void setName(QString nName);
     QString getName();
+
+    int getHP();
+    void setHP(int nHP);
+
+    QString getWeapon();
+    void setWeapon(QString nWeapon);
+
+    void takeDmg(int dmg);
 
     void setIsAttacking(bool nIsAttacking);
     bool getIsAttacking();

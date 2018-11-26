@@ -10,8 +10,7 @@ extern xGame *game;
 
 
 xEnemy::xEnemy(QObject *parent, QString enemyName, int nHP, int nDmg) :
-    xCharacter(parent, enemyName),
-    hp(nHP),
+    xCharacter(parent, enemyName, nHP),
     dmg(nDmg)
 {
     animView = new QGraphicsPixmapItem;
@@ -36,12 +35,6 @@ QLineF xEnemy::getDistanceLine() {
     return ln;
 }
 
-int xEnemy::getHP() { return hp; }
-void xEnemy::setHP(int nHP) { hp = nHP; }
-
-void xEnemy::getDamaged(int dmg) {
-    hp -= dmg;
-}
 
 QGraphicsPixmapItem* xEnemy::getAnimView() { return animView; }
 
@@ -89,7 +82,7 @@ void xEnemy::attack() {
         return;
     }
 
-    game->hero->getDamaged(dmg);
+    game->hero->takeDmg(dmg);
     qDebug() << "hero's HP : " << game->hero->getHP();
 }
 

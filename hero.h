@@ -10,37 +10,22 @@ class xHero : public xCharacter {
 
     Q_OBJECT
 
-    //QGraphicsPixmapItem *animView;
-    //QTimer *stopAnimTimer;
 
-    int hp;
-    QString weapon;
     QString direction;
     bool hit;
 
     xAnimation *anim;
 
 public:
-    xHero(QObject *parent=nullptr, QString heroName="hero", QString nDirection="front", QString nWeapon="staff");
-
-    int getHP();
-    void setHP(int nHP);
+    xHero(QObject *parent=nullptr, QString heroName="hero", int nHP=100, QString nDirection="front", QString nWeapon="staff");
 
     void setDirection(QString nDirection);
     QString getDirection();
 
-    QString getWeapon();
-
-    void getDamaged(int dmg);
     void attack();
     bool checkAttack();
 
     xAnimation *getAnim();
-    //QGraphicsPixmapItem *getAnimView();
-
-//public slots:
-    //void attackAnim(int frame);
-    //void stopAnim();
 };
 
 #endif // HERO_H

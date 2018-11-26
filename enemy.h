@@ -17,18 +17,12 @@ class xEnemy : public xCharacter {
 
     bool animToken = 1;
 
-    int hp;
     int dmg;
 
 public:
     xEnemy(QObject *parent=nullptr, QString enemyName="unknown", int nHP=100, int nDmg=4);
 
     QLineF getDistanceLine();
-
-    int getHP();
-    void setHP(int nHP);
-
-    void getDamaged(int dmg);
 
     QGraphicsPixmapItem *getAnimView();
 

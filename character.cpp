@@ -5,8 +5,10 @@
 extern xGame *game;
 
 
-xCharacter::xCharacter(QObject *parent, QString nName) :
+xCharacter::xCharacter(QObject *parent, QString nName, int nHP, QString nWeapon) :
     name(nName),
+    hp(nHP),
+    weapon(nWeapon),
     view(this, nName),
     isAttacking(false)
 { }
@@ -23,6 +25,14 @@ bool xCharacter::moveView(QString direction) {
 
 void xCharacter::setName(QString nName) { name = nName; }
 QString xCharacter::getName() { return name; }
+
+int xCharacter::getHP() { return hp; }
+void xCharacter::setHP(int nHP) { hp = nHP; }
+
+QString xCharacter::getWeapon() { return weapon; }
+void xCharacter::setWeapon(QString nWeapon) { weapon = nWeapon; }
+
+void xCharacter::takeDmg(int dmg) { hp -= dmg; }
 
 void xCharacter::setIsAttacking(bool nIsAttacking) { isAttacking = nIsAttacking; }
 bool xCharacter::getIsAttacking() { return isAttacking; }
