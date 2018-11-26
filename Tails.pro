@@ -33,7 +33,8 @@ SOURCES += \
     characterview.cpp \
     hero.cpp \
     enemy.cpp \
-    animation.cpp
+    animation.cpp \
+    weapon.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -45,7 +46,8 @@ HEADERS += \
     characterview.h \
     hero.h \
     enemy.h \
-    animation.h
+    animation.h \
+    weapon.h
 
 FORMS += \
         mainwindow.ui

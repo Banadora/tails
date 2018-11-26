@@ -29,8 +29,7 @@ QString xCharacter::getName() { return name; }
 int xCharacter::getHP() { return hp; }
 void xCharacter::setHP(int nHP) { hp = nHP; }
 
-QString xCharacter::getWeapon() { return weapon; }
-void xCharacter::setWeapon(QString nWeapon) { weapon = nWeapon; }
+xWeapon* xCharacter::getWeapon() { return &weapon; }
 
 void xCharacter::takeDmg(int dmg) { hp -= dmg; }
 

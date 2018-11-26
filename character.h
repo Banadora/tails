@@ -2,6 +2,7 @@
 #define CHARACTER_H
 
 #include "characterview.h"
+#include "weapon.h"
 
 #include <QObject>
 #include <QGraphicsItem>
@@ -11,14 +12,18 @@ class xCharacter : public QObject {
 
     QString name;
     int hp;
-    QString weapon;
+    xWeapon weapon;
 
     xCharacterView view;
 
     bool isAttacking;
 
 public:
-    xCharacter(QObject *parent=nullptr, QString nName="", int nHP=100, QString nWeapon="none");
+    xCharacter(QObject *parent=nullptr,
+               QString nName="",
+               int nHP=100,
+               QString nWeapon="none"
+            );
 
     void setViewPos(int nX, int nY);
     xCharacterView* getView();
@@ -30,8 +35,7 @@ public:
     int getHP();
     void setHP(int nHP);
 
-    QString getWeapon();
-    void setWeapon(QString nWeapon);
+    xWeapon* getWeapon();
 
     void takeDmg(int dmg);
 

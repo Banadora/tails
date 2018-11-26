@@ -2,6 +2,7 @@
 #define HERO_H
 
 #include "character.h"
+#include "weapon.h"
 #include "animation.h"
 
 //#include <QTimer>
@@ -17,7 +18,7 @@ class xHero : public xCharacter {
     xAnimation *anim;
 
 public:
-    xHero(QObject *parent=nullptr, QString heroName="hero", int nHP=100, QString nDirection="front", QString nWeapon="staff");
+    xHero(QObject *parent=nullptr, QString heroName="hero", int nHP=100, QString nDirection="front", QString="staff");
 
     void setDirection(QString nDirection);
     QString getDirection();

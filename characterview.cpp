@@ -47,7 +47,7 @@ bool xCharacterView::move(QString direction) {
             setPos(pos().x(), pos().y()-PixelsMove);
             if (name.contains("hero")) {
                 game->hero->setDirection("back");
-                setViewName("hero_back_" + game->hero->getWeapon());
+                setViewName("hero_back_" + game->hero->getWeapon()->getName());
             }
         }
     }
@@ -62,7 +62,7 @@ bool xCharacterView::move(QString direction) {
             setPos(pos().x(), pos().y()+PixelsMove);
             if (name.contains("hero")) {
                 game->hero->setDirection("front");
-                setViewName("hero_front_" + game->hero->getWeapon());
+                setViewName("hero_front_" + game->hero->getWeapon()->getName());
             }
         }
     }
@@ -77,7 +77,7 @@ bool xCharacterView::move(QString direction) {
             setPos(pos().x()-PixelsMove, pos().y());
             if (name.contains("hero")) {
                 game->hero->setDirection("left");
-                setViewName("hero_left_" + game->hero->getWeapon());
+                setViewName("hero_left_" + game->hero->getWeapon()->getName());
             }
         }
     }
@@ -92,7 +92,7 @@ bool xCharacterView::move(QString direction) {
             setPos(pos().x()+PixelsMove, pos().y());
             if (name.contains("hero")) {
                 game->hero->setDirection("right");
-                setViewName("hero_right_" + game->hero->getWeapon());
+                setViewName("hero_right_" + game->hero->getWeapon()->getName());
             }
         }
     }
