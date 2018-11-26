@@ -867,14 +867,14 @@
     ],
     "enemies": [
         {
-            "dmg": 4,
+            "weapon": "claws",
             "hp": 100,
             "name": "squirrel.png",
             "xpos": 64,
             "ypos": 288
         },
         {
-            "dmg": 4,
+            "weapon": "claws",
             "hp": 100,
             "name": "squirrel.png",
             "xpos": 160,
