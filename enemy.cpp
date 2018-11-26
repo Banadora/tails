@@ -96,7 +96,7 @@ void xEnemy::animation() {
     animView->setTransformOriginPoint(0, 0);
     //on/off
     if (animToken == 1) {
-        animView->setPixmap(QPixmap(":/anim/claws.png"));
+        animView->setPixmap(QPixmap(":/anim/" + getWeapon()->getName() + ".png"));
         animView->setPos(getView()->pos().x() + PixelsX/2 + getDistanceLine().dx()/3, getView()->pos().y() + PixelsY/2+ getDistanceLine().dy()/3);
         animToken = 0;
     }
