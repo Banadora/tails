@@ -106,7 +106,8 @@ bool xCharacterView::move(QString direction) {
         if (typeid(*(colliding_items[i])) == typeid(xCharacterView)) { setPos(oldPos); return false; }
     }
 
-    if (game->hero->getIsAttacking()) { game->scene->removeItem(game->hero->getAnim()->getAnimView()); }
+    //if hero is attacking, still move but remove weapon's animation
+    if (game->hero->getIsAttacking()) { game->scene->removeItem(game->hero->getWeapon()->getAttackAnim()->getAnimView()); }
 
     return true;
 }

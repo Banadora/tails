@@ -3,7 +3,6 @@
 
 #include "character.h"
 #include "weapon.h"
-#include "animation.h"
 
 //#include <QTimer>
 
@@ -15,8 +14,6 @@ class xHero : public xCharacter {
     QString direction;
     bool hit;
 
-    xAnimation *anim;
-
 public:
     xHero(QObject *parent=nullptr, QString heroName="hero", int nHP=100, QString nDirection="front", QString="staff");
 
@@ -26,7 +23,7 @@ public:
     void attack();
     bool checkAttack();
 
-    xAnimation *getAnim();
+
 };
 
 #endif // HERO_H

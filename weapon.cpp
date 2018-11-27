@@ -9,9 +9,21 @@ xWeapon::xWeapon(QString nName) :
 
 }
 
+xWeapon::~xWeapon()
+{
+    delete anim;
+}
+
 QString xWeapon::getName() { return name; }
 
 int xWeapon::getDmg() { return dmg; }
+
+xAnimation *xWeapon::getAttackAnim() { return anim; }
+
+void xWeapon::setAttackAnim(QString nName, QString nType, int nTimespan, int nStartFrame, int nStopFrame)
+{
+    anim = new xAnimation(nName, nType, nTimespan, nStartFrame, nStopFrame);
+}
 
 void xWeapon::changeWeapon(QString nName) {
     name = nName;

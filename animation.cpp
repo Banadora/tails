@@ -17,10 +17,13 @@ xAnimation::xAnimation(QString nName, QString nType, int nTimespan, int nStartFr
     animView.setPixmap(QPixmap(":/anim/" + name + ".png"));
     animView.setZValue(9);
     animView.setVisible(false);
+    game->scene->addItem(&animView);
 
     //connect anim's timeline to the type of anim + connect delete on finished timeline
     if (type == "attack") { connect(timeLine, SIGNAL(frameChanged(int)), this, SLOT(attackAnim(int))); }
     connect(timeLine, SIGNAL(finished()), this, SLOT(stopAnim()));
+
+    startAnim(); //auto-launch anim
 }
 
 QGraphicsPixmapItem* xAnimation::getAnimView() { return &animView; }
