@@ -18,11 +18,13 @@ class xEnemy : public xCharacter {
     bool animToken = 1;
 
 public:
-    xEnemy(QObject *parent=nullptr, QString enemyName="unknown", int nHP=100, QString nWeapon="none");
+    xEnemy(QString enemyName="unknown", int nHP=100, QString nWeapon="none");
 
     QLineF getDistanceLine();
 
     QGraphicsPixmapItem *getAnimView();
+
+    bool checkAttack();
 
 public slots:
     void randMove();

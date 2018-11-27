@@ -12,6 +12,8 @@ class xAnimation : public QObject, public QGraphicsPixmapItem {
 
     Q_OBJECT
 
+    QObject *p; //parent object
+
     QString name;
     QString type;
 
@@ -27,7 +29,9 @@ class xAnimation : public QObject, public QGraphicsPixmapItem {
     QTimer *stopAnimTimer;
 
 public:
-    xAnimation(QString nName, QString nType, int nTimespan, int nStartFrame, int nStopFrame);
+    xAnimation(QObject *parent, QString nName, QString nType, int nTimespan, int nStartFrame, int nStopFrame);
+
+    QObject *getParent();
 
     QGraphicsPixmapItem *getAnimView();
 

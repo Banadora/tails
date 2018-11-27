@@ -1,10 +1,13 @@
 #include "animation.h"
 #include "game.h"
 
+#include <QDebug>
+
 
 extern xGame *game;
 
-xAnimation::xAnimation(QString nName, QString nType, int nTimespan, int nStartFrame, int nStopFrame) :
+xAnimation::xAnimation(QObject *parent, QString nName, QString nType, int nTimespan, int nStartFrame, int nStopFrame) :
+    p(parent),
     name(nName),
     type(nType),
     timespan(nTimespan),
@@ -26,48 +29,60 @@ xAnimation::xAnimation(QString nName, QString nType, int nTimespan, int nStartFr
     startAnim(); //auto-launch anim
 }
 
+QObject* xAnimation::getParent() { return p; }
+
 QGraphicsPixmapItem* xAnimation::getAnimView() { return &animView; }
 
 void xAnimation::startAnim() {
-    game->hero->setIsAttacking(true);
     hit = false;
-    animView.setVisible(false);
     timeLine->start();
 }
 
 void xAnimation::attackAnim(int frame) {
+
+    //create a pointer to grand-parent xCharacter (xCharacter << xWeapon << xAnimation)
+    xWeapon *w = dynamic_cast<xWeapon *>(p);
+    xCharacter *c = dynamic_cast<xCharacter *>(w->getParent());
+
+    c->setIsAttacking(true);
     animView.setVisible(true);
-    if (game->hero->getDirection() == "back")
+
+    if (c->getDirection() == "back")
     {
         animView.setRotation(-115 + frame); //-90 (-115 to -80)
-        animView.setPos(game->hero->getView()->pos().x() + PixelsX/2 - 6, game->hero->getView()->pos().y() + PixelsY/2);
-        game->hero->getView()->setViewName("hero_back_" + game->hero->getWeapon()->getName());
+        animView.setPos(c->getView()->pos().x() + PixelsX/2 - 6, c->getView()->pos().y() + PixelsY/2);
+        c->getView()->setViewName("hero_back_" + w->getName());
     }
-    else if (game->hero->getDirection() == "front")
+    else if (c->getDirection() == "front")
     {
         animView.setRotation(65 + frame);//90 (65 to 100)
-        animView.setPos(game->hero->getView()->pos().x() + PixelsX/2 + 6, game->hero->getView()->pos().y() + PixelsY/2);
-        game->hero->getView()->setViewName("hero_front_" + game->hero->getWeapon()->getName());
+        animView.setPos(c->getView()->pos().x() + PixelsX/2 + 6, c->getView()->pos().y() + PixelsY/2);
+        c->getView()->setViewName("hero_front_" + w->getName());
     }
-    else if (game->hero->getDirection() == "right")
+    else if (c->getDirection() == "right")
     {
         animView.setRotation(-25 + frame); //0 (-25 to 10)
-        animView.setPos(game->hero->getView()->pos().x() + PixelsX/2, game->hero->getView()->pos().y() + PixelsY/2 - 6);
-        game->hero->getView()->setViewName("hero_right_" + game->hero->getWeapon()->getName());
+        animView.setPos(c->getView()->pos().x() + PixelsX/2, c->getView()->pos().y() + PixelsY/2 - 6);
+        c->getView()->setViewName("hero_right_" + w->getName());
     }
-    else if (game->hero->getDirection() == "left")
+    else if (c->getDirection() == "left")
     {
         animView.setRotation(155 + frame); //180 (155 to 190)
-        animView.setPos(game->hero->getView()->pos().x() + PixelsX/2, game->hero->getView()->pos().y() + PixelsY/2 + 6);
-        game->hero->getView()->setViewName("hero_left_" + game->hero->getWeapon()->getName());
+        animView.setPos(c->getView()->pos().x() + PixelsX/2, c->getView()->pos().y() + PixelsY/2 + 6);
+        c->getView()->setViewName("hero_left_" + w->getName());
     }
 
     //check if anim is hitting an enemy, if already hit during animation, don't check anymore
-    if (hit == false) { hit = game->hero->checkAttack(); }
+    if (hit == false) { hit = c->checkAttack(); }
 }
 
 void xAnimation::stopAnim()
 {
-    if (type == "attack") { game->hero->setIsAttacking(false); }
+    //create a pointer to grand-parent xCharacter (xCharacter << xWeapon << xAnimation)
+    xWeapon *w = dynamic_cast<xWeapon *>(p);
+    xCharacter *c = dynamic_cast<xCharacter *>(w->getParent());
+
+    if (type == "attack") { c->setIsAttacking(false); }
+
     delete this;
 }

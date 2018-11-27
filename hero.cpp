@@ -8,21 +8,18 @@
 extern xGame *game;
 
 
-xHero::xHero(QObject *parent, QString heroName, int nHP, QString nDirection, QString nWeapon) :
-    xCharacter(parent, heroName, nHP, nWeapon),
-    direction(nDirection)
+xHero::xHero(QString heroName, int nHP, QString nDirection, QString nWeapon) :
+    xCharacter(heroName, nHP, nWeapon)
 {
+    setDirection(nDirection);
     getWeapon()->changeWeapon(nWeapon); //equip a weapon
-    getView()->setViewName(heroName + "_" + direction + "_" + getWeapon()->getName());
+    getView()->setViewName(heroName + "_" + getDirection() + "_" + getWeapon()->getName());
 }
-
-void xHero::setDirection(QString nDirection) { direction = nDirection; }
-QString xHero::getDirection() { return direction; }
 
 void xHero::attack() {
     //create & play new anim + change hero's view to no weapon during anim
     getWeapon()->setAttackAnim(getWeapon()->getName(), "attack", 150, 0, 35);
-    getView()->setViewName(getName() + "_" + direction + "_" + "none");
+    getView()->setViewName(getName() + "_" + getDirection() + "_" + "none");
 }
 
 bool xHero::checkAttack()

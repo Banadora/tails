@@ -9,8 +9,8 @@
 extern xGame *game;
 
 
-xEnemy::xEnemy(QObject *parent, QString enemyName, int nHP, QString nWeapon) :
-    xCharacter(parent, enemyName, nHP, nWeapon)
+xEnemy::xEnemy(QString enemyName, int nHP, QString nWeapon) :
+    xCharacter(enemyName, nHP, nWeapon)
 {
     getWeapon()->changeWeapon(nWeapon); //equip a weapon
 
@@ -38,6 +38,11 @@ QLineF xEnemy::getDistanceLine() {
 
 
 QGraphicsPixmapItem* xEnemy::getAnimView() { return animView; }
+
+bool xEnemy::checkAttack()
+{
+    return false;
+}
 
 void xEnemy::randMove() {
     //check distance between enemy and hero then stop moving and switch to attack if hero is close

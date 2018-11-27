@@ -13,16 +13,13 @@ xCharacterView::xCharacterView()
 { }
 
 xCharacterView::xCharacterView(QObject *parent, QString viewName) :
-    name(viewName),
-    p(parent)
+    p(parent),
+    name(viewName)
 {
     setPixmap(QPixmap(":/img/" + viewName));
 }
 
-QObject* xCharacterView::getParent()
-{
-    return p;
-}
+QObject* xCharacterView::getParent() { return p; }
 
 QString xCharacterView::getViewName() { return name; }
 

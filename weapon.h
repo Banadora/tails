@@ -13,14 +13,19 @@
 
 class xWeapon : public QObject, public QGraphicsPixmapItem {
 
+    Q_OBJECT
+
+    QObject *p; //parent object
+
     QString name;
     int dmg;
 
     xAnimation *anim;
 
 public:
-    xWeapon(QString nName);
-    ~xWeapon();
+    xWeapon(QObject *parent, QString nName);
+
+    QObject *getParent();
 
     QString getName();
 

@@ -21,7 +21,7 @@ xGame::xGame(int viewWidth, int viewHeight): QGraphicsView () {
     mapLayout = new xMapLayout;
 
     //create hero
-    hero = new xHero(this, "hero", 100, "front", "staff");
+    hero = new xHero("hero", 100, "front", "staff");
     hero->setViewPos(mapLayout->getStartX()*PixelsX, mapLayout->getStartY()*PixelsY); //place heroBlock on scene
     hero->getView()->setZValue(10); //set hero view on top of map
     scene->addItem(hero->getView());
@@ -46,7 +46,7 @@ void xGame::placeBlock(int xpos, int ypos, QString blockName, bool isObs) {
 
 void xGame::placeEnemy(int xpos, int ypos, QString name, int hp, QString weapon) {
     //place new enemy
-    enemy = new xEnemy(this, name, hp, weapon);
+    enemy = new xEnemy(name, hp, weapon);
     enemy->getView()->setPos(xpos, ypos);
     enemy->getView()->setZValue(3);
     scene->addItem(enemy->getView());

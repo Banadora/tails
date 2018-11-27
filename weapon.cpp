@@ -3,16 +3,14 @@
 #include <QDebug>
 
 
-xWeapon::xWeapon(QString nName) :
+xWeapon::xWeapon(QObject *parent, QString nName) :
+    p(parent),
     name(nName)
 {
 
 }
 
-xWeapon::~xWeapon()
-{
-    delete anim;
-}
+QObject *xWeapon::getParent() { return p; }
 
 QString xWeapon::getName() { return name; }
 
@@ -22,7 +20,7 @@ xAnimation *xWeapon::getAttackAnim() { return anim; }
 
 void xWeapon::setAttackAnim(QString nName, QString nType, int nTimespan, int nStartFrame, int nStopFrame)
 {
-    anim = new xAnimation(nName, nType, nTimespan, nStartFrame, nStopFrame);
+    anim = new xAnimation(this, nName, nType, nTimespan, nStartFrame, nStopFrame);
 }
 
 void xWeapon::changeWeapon(QString nName) {

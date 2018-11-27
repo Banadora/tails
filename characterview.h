@@ -7,8 +7,9 @@
 
 class xCharacterView : public QGraphicsPixmapItem {
 
-    QString name;
     QObject *p; //parent object
+
+    QString name;
 
 public:
     xCharacterView();
