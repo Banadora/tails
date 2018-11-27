@@ -26,7 +26,7 @@ QString xCharacterView::getViewName() { return name; }
 void xCharacterView::setViewName(QString nName)
 {
     name = nName;
-    setPixmap(QPixmap(":/img/" + name + ".png"));
+    setPixmap(QPixmap(":/img/" + name));
 }
 
 //move char on scene, return true if OK, false if the char didn't move (eg:obstacle)

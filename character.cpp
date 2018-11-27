@@ -27,6 +27,12 @@ bool xCharacter::moveView(QString direction) {
 void xCharacter::setDirection(QString nDirection) { direction = nDirection; }
 QString xCharacter::getDirection() { return direction; }
 
+void xCharacter::setAttackAngle(double nAngle) { attackAngle = nAngle; }
+double xCharacter::getAttackAngle() { return attackAngle; }
+
+void xCharacter::setAttackPos(QPointF nPos) { attackPos = nPos; }
+QPointF xCharacter::getAttackPos() { return attackPos; }
+
 void xCharacter::setName(QString nName) { name = nName; }
 QString xCharacter::getName() { return name; }
 

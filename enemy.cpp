@@ -14,19 +14,10 @@ xEnemy::xEnemy(QString enemyName, int nHP, QString nWeapon) :
 {
     getWeapon()->changeWeapon(nWeapon); //equip a weapon
 
-    animView = new QGraphicsPixmapItem;
-    animView->setZValue(12);
-
     //connect timers
     moveTimer = new QTimer;
     connect(moveTimer, SIGNAL(timeout()), this, SLOT(randMove()));
     moveTimer->start(800);
-
-    attackTimer = new QTimer;
-    connect(attackTimer, SIGNAL(timeout()), this, SLOT(attack()));
-
-    animTimer = new QTimer;
-    connect(animTimer, SIGNAL(timeout()), this, SLOT(animation()));
 }
 
 QLineF xEnemy::getDistanceLine() {
@@ -36,11 +27,28 @@ QLineF xEnemy::getDistanceLine() {
     return ln;
 }
 
-
-QGraphicsPixmapItem* xEnemy::getAnimView() { return animView; }
-
 bool xEnemy::checkAttack()
 {
+    //check if anim collides with an hero, return true if hero took a shot
+    xCharacterView *hv = new xCharacterView(nullptr, ""); //pointer to hero's view
+
+    QList<QGraphicsItem *> colliding_items = getWeapon()->getAttackAnim()->getAnimView()->collidingItems();
+    for (int i = 0, n = colliding_items.size(); i < n; ++i) {
+
+        if (typeid(*(colliding_items[i])) == typeid(xCharacterView)) {
+
+            hv = qgraphicsitem_cast<xCharacterView *>(colliding_items[i]);
+
+            if (hv->getViewName().contains("hero") == true) { //delete character objects (with associated views)
+                xHero *h = dynamic_cast<xHero *>(hv->getParent());
+                h->takeDmg(getWeapon()->getDmg());
+                qDebug() << "hero's HP : " << h->getHP();
+
+                return true;
+            }
+        }
+    }
+
     return false;
 }
 
@@ -48,14 +56,7 @@ void xEnemy::randMove() {
     //check distance between enemy and hero then stop moving and switch to attack if hero is close
     double ln = getDistanceLine().length();
     if (ln < 36) {
-        moveTimer->stop();
-
-
-        game->scene->addItem(animView);
-        animTimer->start(450);
-
-        attackTimer->start(1000);
-        qDebug()<< "attacked!";
+        attack();
         return;
     }
 
@@ -75,39 +76,10 @@ void xEnemy::randMove() {
 }
 
 void xEnemy::attack() {
-    //check distance between enemy and hero then stop attacking and switch to moving if hero is far
-    double ln = getDistanceLine().length();
-    if (ln > 36) {
-        attackTimer->stop();
+    //create & play new anim
+    setAttackAngle((getDistanceLine().angle() * -1) - 20);
+    QPointF pt(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2);
+    setAttackPos(pt);
 
-        game->scene->removeItem(animView);
-        animTimer->stop();
-
-        moveTimer->start(800);
-        qDebug()<< "moving!";
-        return;
-    }
-
-    game->hero->takeDmg(getWeapon()->getDmg());
-    qDebug() << "hero's HP : " << game->hero->getHP();
-}
-
-void xEnemy::animation() {
-    //set angle
-    double angle = getDistanceLine().angle() * -1;
-    //animView->setTransformOriginPoint(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2);
-    animView->setTransformOriginPoint(animView->pos().x() + 9.5, animView->pos().x() + 6);
-    animView->setRotation(angle);
-    animView->setTransformOriginPoint(0, 0);
-    //on/off
-    if (animToken == 1) {
-        animView->setPixmap(QPixmap(":/anim/" + getWeapon()->getName() + ".png"));
-        animView->setPos(getView()->pos().x() + PixelsX/2 + getDistanceLine().dx()/3, getView()->pos().y() + PixelsY/2+ getDistanceLine().dy()/3);
-        animToken = 0;
-    }
-    else {
-        animView->setPixmap(QPixmap(""));
-        animView->setPos(getView()->pos().x() + PixelsX/2 + getDistanceLine().dx()/4, getView()->pos().y() + PixelsY/2+ getDistanceLine().dy()/4);
-        animToken = 1;
-    }
+    getWeapon()->setAttackAnim(getWeapon()->getName(), "attack", 500, 0, 35);
 }

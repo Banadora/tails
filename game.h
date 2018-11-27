@@ -18,7 +18,7 @@
 #define PixelsX 32      //blocks width in pixels
 #define PixelsY 32      //blocks height in pixels
 #define PixelsMove 16   //move distance in pixels
-#define StartingMap "garden" //name.json will be opened at start
+#define StartingMap "plains" //name.json will be opened at start
 
 
 class xGame : public QGraphicsView {
