@@ -19,7 +19,7 @@ public:
 
     QString getViewName();
     void setViewName(QString nName);
-    bool move(QString direction);
+    bool move(double nPosX, double nPosY);
 };
 
 #endif // CHARACTERVIEW_H

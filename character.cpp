@@ -19,8 +19,15 @@ void xCharacter::setViewPos(int nX, int nY) { view.setPos(nX, nY); }
 
 xCharacterView* xCharacter::getView() { return &view; }
 
-bool xCharacter::moveView(QString direction) {
-    bool moved = getView()->move(direction);
+bool xCharacter::moveView(QString nDirection) {
+    bool moved;
+    direction = nDirection;
+
+    if (direction == "north") { moved = getView()->move(getView()->pos().x(), getView()->pos().y()-PixelsMove); }
+    else if (direction == "south") { moved = getView()->move(getView()->pos().x(), getView()->pos().y()+PixelsMove); }
+    else if (direction == "west") { moved = getView()->move(getView()->pos().x()-PixelsMove, getView()->pos().y()); }
+    else if (direction == "east") { moved = getView()->move(getView()->pos().x()+PixelsMove, getView()->pos().y()); }
+
     return moved;
 }
 

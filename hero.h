@@ -11,6 +11,8 @@ class xHero : public xCharacter {
 public:
     xHero(QString heroName="hero", int nHP=100, QString nDirection="front", QString="staff");
 
+    bool moveView (QString direction);
+
     void attack();
     bool checkAttack();
 };

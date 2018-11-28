@@ -35,7 +35,7 @@ public:
 
     void setViewPos(int nX, int nY);
     xCharacterView* getView();
-    bool moveView (QString direction);
+    bool moveView (QString nDirection);
 
     void setDirection(QString nDirection);
     QString getDirection();

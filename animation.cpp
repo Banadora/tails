@@ -59,7 +59,10 @@ void xAnimation::attackAnim(int frame) {
     //check if last frame
     if (frame == stopFrame) {
         c->setIsAttacking(false);
-        if (c->getName().contains("hero")) { c->getView()->setViewName("hero_" + c->getDirection() + "_" + w->getName()); }
+        if (c->getName().contains("hero")) {
+            //replace "none" in view's name with weapon's name
+            c->getView()->setViewName(c->getView()->getViewName().replace("none", c->getWeapon()->getName()));
+        }
     }
 }
 
