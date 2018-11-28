@@ -70,35 +70,30 @@ bool xHero::moveView(QString direction)
 void xHero::attack() {
     //create & play new anim + change hero's view to no weapon during anim
     if (getView()->getViewName().contains("back")) {
-        setAttackAngle(-115);
-        QPointF pt(getView()->pos().x() + PixelsX/2 - 6, getView()->pos().y() + PixelsY/2);
-        setAttackPos(pt);
+        setAttackAngle(-90);
+        setAttackPos(QPointF(getView()->pos().x() + PixelsX/2 - 16, getView()->pos().y() + PixelsY/2));
     }
     else if (getView()->getViewName().contains("front")) {
-        setAttackAngle(65);
-        QPointF pt(getView()->pos().x() + PixelsX/2 + 6, getView()->pos().y() + PixelsY/2);
-        setAttackPos(pt);
+        setAttackAngle(90);
+        setAttackPos(QPointF(getView()->pos().x() + PixelsX/2 + 16, getView()->pos().y() + PixelsY/2));
     }
     else if (getView()->getViewName().contains("right")) {
-        setAttackAngle(-25);
-        QPointF pt(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2 - 6);
-        setAttackPos(pt);
+        setAttackAngle(0);
+        setAttackPos(QPointF(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2 - 16));
     }
     else if (getView()->getViewName().contains("left")) {
-        setAttackAngle(155);
-        QPointF pt(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2 + 6);
-        setAttackPos(pt);
+        setAttackAngle(180);
+        setAttackPos(QPointF(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2 + 16));
     }
     else {
         setAttackAngle(0);
-        QPointF pt(getView()->pos().x(), getView()->pos().y());
-        setAttackPos(pt);
+        setAttackPos(QPointF(getView()->pos().x(), getView()->pos().y()));
     }
 
     //remove weapon's name from view's name + replace with none
     getView()->setViewName(getView()->getViewName().replace(getWeapon()->getName(), "none"));
 
-    getWeapon()->setAttackAnim(getWeapon()->getName(), "attack", 150, 0, 35);
+    getWeapon()->setAttackAnim(getWeapon()->getName(), "attack", 150, 0, 15);
 }
 
 bool xHero::checkAttack()

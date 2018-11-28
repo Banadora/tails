@@ -34,6 +34,6 @@
         <file>img/hero_left_none.png</file>
         <file>img/hero_right_none.png</file>
         <file>anim/claws.png</file>
-        <file>anim/staff.png</file>
+        <file>anim/staff_attack.png</file>
     </qresource>
 </RCC>

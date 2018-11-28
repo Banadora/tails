@@ -17,9 +17,9 @@ xAnimation::xAnimation(QObject *parent, QString nName, QString nType, int nTimes
     timeLine = new QTimeLine(timespan, this);
     timeLine->setFrameRange(startFrame, stopFrame);
 
-    animView.setPixmap(QPixmap(":/anim/" + name));
     animView.setZValue(9);
     animView.setVisible(false);
+    animView.setPos(0, 0);
     game->scene->addItem(&animView);
 
     //connect anim's timeline to the type of anim + connect delete on finished timeline
@@ -41,6 +41,16 @@ void xAnimation::startAnim() {
 
 void xAnimation::attackAnim(int frame) {
 
+    //TODO : damn maths
+    int x = frame%4;
+    int y = frame/4;
+
+    //load sprite sheet and chop it
+    QRect rect(x*32, y*32, 32, 32);
+    QPixmap sheet(":/anim/" + name + "_attack");
+    QPixmap sprite = sheet.copy(rect);
+    animView.setPixmap(sprite);
+
     //create a pointer to grand-parent xCharacter (xCharacter << xWeapon << xAnimation)
     xWeapon *w = new xWeapon(nullptr, "none");
     w = dynamic_cast<xWeapon *>(p);
@@ -50,7 +60,7 @@ void xAnimation::attackAnim(int frame) {
     c->setIsAttacking(true);
     animView.setVisible(true);
 
-    animView.setRotation(c->getAttackAngle() + frame);
+    animView.setRotation(c->getAttackAngle());
     animView.setPos(c->getAttackPos());
 
     //check if anim is hitting an enemy, if already have hit during animation, don't check anymore

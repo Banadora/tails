@@ -81,5 +81,5 @@ void xEnemy::attack() {
     QPointF pt(getView()->pos().x() + PixelsX/2, getView()->pos().y() + PixelsY/2);
     setAttackPos(pt);
 
-    getWeapon()->setAttackAnim(getWeapon()->getName(), "attack", 500, 0, 35);
+    getWeapon()->setAttackAnim(getWeapon()->getName(), "attack", 500, 0, 15);
 }
